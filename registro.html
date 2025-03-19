@@ -1,0 +1,145 @@
+<!-- created by Francisco -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .promo-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            display: inline-block;
+            border: 1px solid red;
+        animation: glow 2s infinite alternate;
+            
+            
+        }
+        .promo-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            padding: 5px;
+            background: black;
+        }
+        
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: white;
+            text-shadow: 0 0 10px green, 0 0 20px green;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 10px red, 0 0 20px red;
+        }
+        
+        p {
+            color: #ccc;
+            font-size: 16px;
+        }
+        
+        .enviar  {
+            display: inline-block;
+            background: red;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px red;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        .enviar :hover {
+            background: darkred;
+            box-shadow: 0 0 25px red, 0 0 40px red;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px red; }
+            100% { box-shadow: 0 0 20px red, 0 0 30px red; }
+        }
+        
+        
+        
+       
+       /*  Label  */
+
+     .A{
+      font-size: 1.7rem;
+      margin-top: 100px;
+      padding: 50px 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      color: #fff ;
+      
+     }
+     
+
+
+      /* Input */
+       .B{
+    width: 250px; /* Ancho */
+    height: 5px; /* Alto */
+    font-size: 18px; /* Tamaño del texto dentro del input */
+    padding: 10px; /* Espaciado interno */
+    border-radius :7px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="promo-box">
+        <img src="https://i.ibb.co/SX227d4q/FB-IMG-1739585255550.jpg" alt="Channel Logo">
+        <h1>Francisco García</h1>  
+        <h2> Freenlancer Diseño Web </h2>
+
+<p>Hola, soy un programador de páginas web quiero llevar su negocio a otro nivel creando su propia galería digital, una página web en su negocio ara más accesible su publicación en todas las redes, teniendo un espacio en el Internet </p>
+        <br>
+        <br>
+  <form action="https://formspree.io/f/mgvobknl" method="POST">
+  
+  <label class="A"> Nombre y Apellido</label>      <br>
+<input class="B" type="text" name ="NOMBRE" placeholder="Nombre y Apellido " required></input>
+<br>
+<br>
+<br>
+<br>
+ <label class="A">Teléfono de Contacto</label>
+<br>
+<input class="B" type="tel" name="TELÉFONO" placeholder ="Número de Contacto" required></input>
+    <br>
+    <br>
+    <br>
+    <br>
+          <label class="A">Email </label>
+              <br>
+      <input class="B" type="email"  name="email" placeholder="Ejemplo@gmail.com"  required>
+    <br>
+    <br>
+    <br>
+   <button class="enviar">Contactar </button>
+     <br>
+     <br>
+    </div>
+
+</body>
+</html>
