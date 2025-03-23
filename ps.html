@@ -1,0 +1,434 @@
+
+
+
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+  
+    
+ 
+  <style>
+
+    /* Estilo general */
+    body {
+margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: black;
+      color:black;
+      text-align: center;
+     
+
+    }
+    
+    
+    
+    
+    
+    
+
+ 
+     .form-register1{
+         width:400px;
+         background: #24303c;
+         padding: 10px;
+         margin:auto;
+         margin-top:19px;
+         border-radius:20px;
+         font-family:'calibri';
+         color :white;
+         box-shadow:7px 13px 80px  blue;
+         height:950px;
+         
+         
+         }
+    
+    
+    
+    
+ 
+    
+    
+    .controls1{
+        width: 80%  ;
+        background : #24303c;
+        padding :10px;
+        border-radius:4px;
+        margin-bottom:12px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-family :'calibri';
+        font-size:18px;
+        color:#fff;
+        
+    }
+    
+    
+    
+       .controls2{
+        width: 33%  ;
+        background : #24303c;
+        padding :5px;
+        border-radius:10px;
+        margin-bottom:5px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-family :'calibri';
+        font-size:18px;
+        color:#fff;
+        
+        
+    }
+    
+    
+    
+       .controls3{
+        width: 12%  ;
+        background : #24303c;
+        padding :2px;
+        border-radius:10px;
+        margin-bottom:5px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-family :'calibri';
+        font-size:18px;
+        color:#fff;
+        text-align: center;
+        
+        
+    }
+    
+    
+    
+    
+    
+       .controls4{
+        width: 20%;
+        background : #24303c;
+        padding :10px;
+        border-radius:10px;
+        margin-bottom:5px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-family :'calibri';
+        font-size:18px;
+        color:#fff;
+        
+       
+    }
+    
+    
+
+            /*ANIMASION DEL BOTON ENVIAR */
+    
+    .BBB{
+           padding: 9px 50px; ancho del boton
+           display: inline-block;
+            background: blue ;
+            color: white;
+            padding: 9px 50px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px red;
+           animation: glow 1.5s infinite alternate;
+        }
+        
+        
+        
+        
+        
+        .BBB:hover {
+            background: red;
+            box-shadow: 0 0 25px red, 0 0 40px red;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px red; }
+            100% { box-shadow: 0 0 20px red, 0 0 30px red; }
+        }
+    
+    
+ 
+
+  </style>
+</head>
+<body>
+    
+    <div>
+         
+ <form>
+     
+      
+            <!-- PEDIDO DE PIZZA -->      
+ <section class="form-register1">
+     
+     <br>
+    
+      
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      
+      
+      
+      
+    <div class="carousel-item active">
+      <img src="https://i.ibb.co/5h7Yq3gB/20250212-172322.jpg" class="d-block w-100" width="300" height="200" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/VcSBfny9/images-30.jpg" class="d-block w-100" width="300" height="200"alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/h123sL6c/20250322-161554.jpg" class="d-block w-100" width="300" height="200"alt="">
+      </div>
+    <div class="carousel-item active">
+      <img src="https://i.ibb.co/bRXP6hMn/5642c4767e7ded5d8a9346b31a63f87b-500x500.jpg" class="d-block w-100" width="300" height="200" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/MynRT6Wg/images-25.jpg" class="d-block w-100" width="300" height="200"alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ibb.co/h123sL6c/20250322-161554.jpg" class="d-block w-100" width="300" height="200"alt="">
+  </div>
+  
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      
+      <br>
+<input type="radio" id="PEDIDO" name="Pedido DE:" value="ESPAGUETIS" required>ESPAGUETIS </input>
+      <br>
+     <select class="controls2" id="DE" name="PEDIDO_DE_ESPAGUETIS">
+            
+  <option value="No Seleccionado">MENÚ </option>
+
+  <option value="Napolitano"> NAPOLITANO  $500</option>
+  <option value="Jamon"> JAMON $ 500</option>       
+  <option value="Familiar"> FAMILIAR $500</option>   <option value="Aceituna"> ACEITUNA $500</option>  
+ 
+        </select>
+        
+        
+                  <!--  CANTIDAD   -->
+        
+
+        <input class="controls3" type="tel" id="CANTIDAD_E" value="" name="Cantidad_E" placeholder="#" required>
+           
+           <br>
+        
+        
+          <!-- AGREGOS DE ESPAGUETIS -->
+  
+  <select class="controls2" class="controls1" id="AGREGOS_E" name="AGREGOS_DE_ESPAGUETIS">
+      
+<option value="No Seleccionado "> AGREGOS</option>
+ <option value="Jamon"> JAMON </option>      
+<option value="Queso"> QUESO </option>
+
+<option value="Chorizo"> CHORIZO </option>  
+
+<option value="Perrito"> PERRITO</option>
+
+  </select>
+
+                  <!--  CANTIDAD   -->
+        
+
+        <input class="controls3" type="tel" id="CANT_D_Agre_E" value="" name="Cant_D_Agre_E" placeholder="#" required>
+           
+
+               <br> <br> <br>
+
+          
+        <!--- VEVIDAS  --->
+          
+          
+        <input type="radio" id="VEVIDAS" name="Vevidas:" value="VEVIDAS" required>VEVIDAS</input>
+   <br>
+  <select class="controls2" id="RF_DE" name="VEVIDAS">
+      
+<option value="No Seleccionado">REFRESCO </option>
+ <option value="Cola"> COLA</option>      
+<option value="Piña"> PIÑA</option>
+<option value="Limon">LIMON</option>
+<option value="Naranja"> NARANJA </option>
+        </select>
+             <!--  CANTIDAD   -->
+
+
+        <input class="controls3" type="tel" id="CANT_D_R" value="" name="CANT_D_R" placeholder="#" required>
+
+<br>
+           <!--CERVESA -->
+
+  <select class="controls2" id="CERVEZA" name="Cerveza">
+      
+<option value="No Seleccionado"> CERVEZA</option>
+ <option value="Cristal"> CRISTAL </option>      
+<option value="Babaria"> BABARIA</option>
+<option value=" Bucanero">BUCANERO </option>
+<option value="Corona"> CORONA </option>
+        </select>
+
+
+
+             <!--  CANTIDAD   -->
+
+
+ <input class="controls3" type="tel" id="CANT_D_C" value="" name="CANT_D_C" placeholder="#" required>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+             <!-- FORMULARIO -->
+             
+
+  <label> AQUIEN IRA SU PEDIDO</label>
+  <br>
+  <br>
+<input class="controls1" type="text" id="NOMBRE" value="" name="Nombre:" placeholder="Nombre y Apellido" required>
+
+
+        <input class="controls1" type="tel" id="TELÉFONO"  value="" name="Teléfono" placeholder="Número de Contacto" required>
+
+    
+        <input class="controls1" type="text" id="DIRECCIÓN"  value="" name="Dirección" placeholder="Dinrencción De Envio" required>
+
+    <br>
+      <br>
+        <br>
+        
+     <a class="BBB" onclick="enviar()" id="enviar" href="#">  Enviar</a> 
+     
+     <br>
+        
+    </form>
+    </section>
+        <br>
+
+
+
+
+     <!-- YAJAVA SCRIPT DE LA HOHA DE PEDIDO-->
+       
+       
+    <script>
+           function enviar() {
+            const PEDIDO = document.querySelector('input[name="Pedido DE:"]:checked')?.value || "No seleccionado";
+            
+             const DE = document.getElementById('DE').value;
+             
+             
+             
+             const CANTIDAD_E = document.getElementById('CANTIDAD_E').value;
+            
+             
+             const AGREGOS_E = document.getElementById('AGREGOS_E').value;
+             
+             const CANT_D_Agre_E  = document.getElementById('CANT_D_Agre_E').value;
+            
+             
+             
+             
+             
+             const VEVIDAS = document.querySelector('input[name="Vevidas:"]:checked')?.value || "No seleccionado";
+             
+             
+             
+             const RF_DE = document.getElementById('RF_DE').value;
+             
+             
+             
+             
+            const CANT_D_R = document.getElementById('CANT_D_R').value;
+            
+            
+            
+            
+            const CERVEZA = document.getElementById('CERVEZA').value;
+            
+            
+         const CANT_D_C = document.getElementById('CANT_D_C').value;
+            
+            
+            
+            
+            
+            const NOMBRE = document.getElementById('NOMBRE').value;
+            
+            
+            const TELÉFONO = document.getElementById('TELÉFONO').value;
+            
+            
+            const DIRECCIÓN = document.getElementById('DIRECCIÓN').value;
+            
+            
+            
+            const enviar = document.getElementById('enviar');
+            
+
+            let mensaje = `https://api.whatsapp.com/send?phone=+5353571569&text=
+            
+    *Cantidad_E*: ${CANTIDAD_E}%20     
+             
+            
+                                                          *Pedido DE*: ${PEDIDO}%20                           
+            
+                   *DE*: ${DE}%20 
+                                                              *Agregar_E*: ${AGREGOS_E}%20 
+            
+          *Cant_D_Agre_E*: ${CANT_D_Agre_E}%20  
+          
+          
+          
+                                                      *Vevidas*: ${VEVIDAS}%20
+                                                      
+
+                                                             *RF_DE*: ${RF_DE}%20                                     
+                                                             
+                                                             
+*Cant_D_R*: ${CANT_D_R}%20
+                                                    
+                                                             
+                                                                                                             *Cerveza:* ${CERVEZA }%20
+                                                          *Cant_D_C*: ${CANT_D_C}%20
+                                                          
+                                                                                           
+                                                                                                                                                                  *Nombre*: ${NOMBRE}%20 
+                                                                                                                  *Telefóno*: ${TELÉFONO}%20
+                                                                 *Dirección*: ${DIRECCIÓN}%20 `
+          
+              enviar.href = mensaje;
+        }
+        
+    </script>
+    
+    
+    
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    
+    
+    
+         
+     </footer>
+     </div>
+</body>
+</html>
