@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DELCERIA HELADERIA</title>
+  
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <style>
+  
+ 
+    body{
+background-color :#fffff4;
+        
+    }
+    
+    
+     /* FONDO DEL MENU LATERAL*/
+    .offcanvas{
+        background-color :#1a1a1a;
+         border-radius :1rem;
+    }
+    
+      
+  .offcanvas-header{
+        text-align :center;
+        background-color : #fffff4 ; arriba
+        color:black;
+        font-family :cursive;
+        font-size :1.9rem;
+      height: 5.5rem; 
+text-shadow: 2px 11px 5px rgba(0, 0, 0, 0.5);
+    }
+
+
+    
+    /* PASOS A SEGUIR */
+ .projects { 
+        counter-reset: project-counter;
+        color:#d0d0d0;
+    }
+   
+   
+   .introduction1 {
+        font-family: 'Crimson Pro', serif;
+        font-size: 22px;
+        color: #d0d0d0;
+        padding: 25px;
+        background: #252525;
+        border-radius: 3px;
+        border-left: 4px solid #c5a47e;
+        margin: 30px 0;
+    }
+    
+    
+    .project-title1 {                                        font-family: 'Montserrat', sans-serif;
+        line-height:1;            
+        font-size: 24px;
+        color: #c5a47e;
+        margin: 25px 0 15px;
+        padding-left: 2px;
+        position: relative;
+   }
+    
+
+  .project-description1 { tex del dato
+        font-family: 'Crimson Pro', serif;
+        font-size: 18px;
+        color: #b0b0b0;
+        margin-left: 35px;
+    border-left: 2px solid #3d3d3d;linea vertical 
+        padding-left: 20px;
+    }
+    
+   .pasos{
+     width:310px;
+        height :¹130px;
+        margin :2rem;
+    }
+    
+  
+    
+    
+    
+    
+    
+    /*------- CSS DE LAL LOGO -------- */
+    .img9{
+        width: 70px;
+        height: 70px; 
+        border-radius: 100px;
+        display:center;
+        margin: center;
+    }
+    
+    
+    /*------ NOMBRE DE PAGINA --------*/
+   .A{
+     font-size: 2rem;
+     line-height: 1.6;
+     text-shadow: 2px 11px 5px rgba(0, 0, 0, 0.5);
+     text-align: left;
+     font-family: 'cursive';
+     font-size: 30px;
+     font-weight: bold;
+     color:black;
+     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+       
+       /*COLOR DE LA BARRA DE INICIO*/
+    .container-fluid{
+          background-color :#fffff4;
+          font-size :1rem;
+        }
+ 
+ 
+ 
+.offcanvas-title{
+background-color :#fffff4;
+          font-size :1rem;
+    
+    
+    
+    
+}
+ 
+ 
+ 
+       /*TEXTO INDICACIONES */
+       .B{
+           font-size :1rem;
+       }
+       
+    
+  .contenedor{
+       display:flex; /* PONER IMAGEN AL LADO DE LA                                            OTRA*/
+       justify-content: center;
+      margin:10px;
+    }
+    
+ 
+ .IMG1{
+        width:190px;
+        height:150px;
+        margin-right:10px;
+        border-radius :10px;
+        margin:0.1rem;
+        margin-top :0.8rem;
+    }
+    
+  
+    
+       .IMG2{
+        width:190px;
+        height:150px;
+        margin-right:10px;
+        border-radius :10px;
+        margin:0.1rem;
+        margin-top :0.8rem;
+    }
+    
+  
+  
+  
+    
+ 
+    .IMG3{
+        width:390px;
+        height:150px;
+        margin-right:19px;
+        border-radius :10px;
+        margin:0.2rem;
+        margin-top :0.9px;
+    }
+    
+    
+         /* NOMBRE DEL PRODUCTO */
+      h1{  
+       color:black ; 
+       font-size :0.9rem;
+       margin:0rem;
+       height :11px;
+       padding:0.1rem;
+       width:10rem;
+    }
+    
+    
+
+         /* DESCRICION DEL PRODUCTO */
+    h2{
+       color:#808080; 
+       font-size :10px;
+        margin:5px;
+        height :0.3rem; separación 
+    
+    }
+    
+    
+    
+      /* ------  BOTORES DEL CAJON   ------- */  
+    
+             /* PRECIO   */
+    .P{
+       color:black;
+       font-size :1rem;
+       text-align :left;
+       margin:0.2rem;
+       padding:0.1rem; 
+    
+    }
+    
+          /* CAMTIDAD */
+    .Cantidad{
+        width: 12%  ;
+        background :#fff; /* #12a1e4; #24303c;*/
+        padding :1px;
+        border-radius:10px;
+        margin-bottom:1px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-size:15px;
+        color:black;
+        text-align: center;
+        
+    }
+
+          /* RESETEAR */
+    .Resetear{
+             width:3rem;
+            height :1.7rem;
+           display: inline-block;
+            background:#fffff4;
+            color:black ;
+            padding: 1px;
+            border-radius: 10px;
+            font-size:15px;
+            text-align :center;
+           letter-spacing: 0.2px;
+   }
+        
+        .Resetear:hover {
+            color:#fff;
+          background:#a1a1a1;
+         box-shadow: 0 0 2px red, 0 0 1px red ;
+        }
+      
+      
+   
+   .Enviar{
+            width:4rem;
+            height :1.7rem;
+            display: inline-block;
+            background:#ffff4;
+            color:black;
+            padding: 1px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size:15px;
+            text-align :center;
+            text-alig n: right;
+            letter-spacing: 0.2px;
+    }
+    
+        .Enviar:hover {
+          background:#a1a1a1;
+          color:#fff;
+         box-shadow: 0 0 2px blue, 0 0 1px blue ;
+        }
+        
+    
+  
+
+    /*---- PIE DE PAGINA ----*/
+    #footer {
+b ackground:url(https://i.ibb.co/4nQWnTr6/5642c4767e7ded5d8a9346b31a63f87b-500x500.jpg);
+      /*rgba(0, 0, 0, 9.9);*/
+      padding: 10px 0;
+      font-size: 0.9rem;
+      positi on: fixed;
+      bottom: 0;
+      width: 100%;
+      color: #fff;
+    }
+    
+
+    .W {
+        width: 21rem  ;
+        background :#24303c;
+        padding :9px;
+        border-radius:10px;
+        margin:0.2rem;
+        margin-bottom:10px;altura entre uno y otro
+        border:1px  solid: #1f533c5;
+        font-size:15px;
+        color:#fff;
+        text-align: center;
+        text-align: left;
+    }
+        
+    
+    
+        /* -------- PEDIDO REALISADO ----->*/
+        
+    .FFT{
+       width: 150px;
+        height: 100px;
+        display:center;
+        margin: center;
+
+
+     }
+        
+        
+        
+        
+        
+    /* BOTON DE PAGAR */
+      .BBB{
+          text-align :center;
+          margin:5rem;
+           padding: 9px 20px; ancho del boton
+           display: inline-block;
+            background: blue ;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px red;
+           animation: glow 1.5s infinite alternate;
+        }
+        
+        
+        .BBB:hover {
+            color:black;
+            background:#12a1d4;
+            box-shadow: 0 0 25px #12a1d4, 0 0 40px #12a1d4;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 7px #12a1d4; }
+            100% { box-shadow: 0 0 9px #12a1d4, 0 0 9px #12a1d4; }
+        }
+
+    
+          /*PRODUCTOS ELEGIDOS */
+    .pagarProductos{
+        color: black;
+        font-size:1rem;
+        margin-bottom:1rem;
+        font-weight:bold;
+        border-bottom: 1px solid #572364;
+        margin-bottom:1px;
+        display:none;
+      }
+    
+    /* CANTIDAS A PAGAR */
+    .TotalPagar{
+        font-size :2rem;
+        color:red;
+        text-align :center;
+     }
+ 
+    .contenedorResumen{
+        color: black; 
+        margin:2rem;
+    }
+    
+     h4{
+         color:black;
+         text-align :center ;
+     }
+ 
+    
+    
+    
+    
+  </style>
+  
+</head>
+   <body>
+    <!--     CODIGO DEL MENU    -->
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+      
+      <a href="desarrollo.html">
+    <img class="img9" src="imglogo.jpg"> <br> </a>
+ <div class="A">LA CREMA</div>
+      <br>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+ <div class="B"><b> Indicación </b></div>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start"⁹ tabindex="-1" id="offcanvasNavbar">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">INDICACIÓNES </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+          <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            
+    
+
+    <p class="introduction1">Sigue los siguientes pasos para realizar su  pedido correctamente  </p>
+    <hr>
+  <div class="projects">
+     <div class="project-title1"> Paso 1</div>
+     <p class="project-description1">
+Seleccione el boton ubicado en el cuadrante superior derecho , indicando la introducción :<br> Eje en la imagen siguiente  </p>
+    <img class="pasos"   src="https://i.ibb.co/PGP1D6sH/Screenshot-20250404-195202-Chrome.jpg">
+
+<br>
+            <hr>
+            
+            <br>
+   <div class="project-title1">Paso 2</div>
+    <p class="project-description1">
+  Seleccione la cantidad de productos deseados<br>
+  Eje: en la imagen siguiente
+  </p>
+  <img class="pasos" src="https://i.ibb.co/XrHpVd6K/Screenshot-20250404-210259-Chrome.jpg">
+            <hr>
+            
+            <br>
+            
+ <div class="project-title1">Paso 3</div>
+    <p class="project-description1"> 
+Seleccione el boton subir al carrito, ésta opción hará que se calcule automáticamente los productos seleccionado . <br>
+Eje: en la imagen siguiente 
+</p>
+     <img class="pasos" src="https://i.ibb.co/5hcQhS8Q/Screenshot-20250404-211923-Chrome.jpg">      
+           <hr>
+           <br>
+    <div class="project-title1">Paso 4</div>
+         <p class="project-description1">     
+Luego deslise hacia abajo hasta el final de la página,  encontrarás la factura, <br> rellene el formulario 
+y envíelo presionando el boton </br>
+Eje: </p>
+<img class="pasos" src="https://i.ibb.co/hR1ZKTKj/20250404-222320.jpg">
+         <hr>
+           </div>
+               <br>
+ <div class="project-title1">Paso 5</div>
+         <p class="project-description1">     
+Saber más sobre el proyecto FGstudio, <br> Presiones el logo en el borde superior isquierdo
+Eje: </p> 
+<img class="pasos" src="https://i.ibb.co/CKTX10Gp/Screenshot-20250404-223843-Chrome.jpg">
+         <hr>
+           </div>
+                <br>
+         <hr>
+           </div>
+               </nav>
+                   <br>
+                      <br>
+       <br>
+       <br>
+      <div class="contenedor">
+         
+        <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto1">
+  <img class="IMG3" src ="imgpeter.webp" alt="PETER 1">
+  
+ <label class="N"><h1><b> PETER</b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> Delicioso Peter de chocolate con leche</spam></label></h2>
+     <label class="P" id="precio1">  <spam style="color:red"> 250.00 cup </spam> </label> <br>    
+ <input class="Cantidad" type="tel" min="0" id="producto1" name="producto1" placeholder="#"></input> 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+             </div>
+                 </div>
+      <div class="contenedor">
+        <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto2">
+  <img class="IMG1" src ="imgkakecoco.webp" alt="KAKE 2">
+  
+ <label class="N"><h1><b> KAKE CHOCOLATE </b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> Kake de chocolate relleno de Nutella </spam></label></h2>
+     <label class="P" id="precio2">  <spam style="color:red"> 5900.00 cup </spam> </label> <br>
+     
+ <input class="Cantidad" type="tel" min="0" id="producto2" name="producto2" placeholder="#"></input> 
+ 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+ 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+             </div>
+    <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto3">
+  <img class="IMG2" src ="imgkakechocolate.webp" alt="KAKE COCO">
+  
+ <label class="N"><h1><b> KAKE COCO</b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> Kake de chocolate y coco  relleno ...</spam></label></h2>
+     <label class="P" id="precio3">  <spam style="color:red"> 5000.00 cup </spam> </label> <br>
+ <input class="Cantidad" type="tel" min="0" id="producto3" name="producto3" placeholder="#"></input> 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+            </div>
+          
+</div>
+      <div class="contenedor">
+        <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto4">
+  <img class="IMG1" src ="imghelado1.jpeg" alt="HELADOS 5">
+ <label class="N"><h1><b> HELADO RISADO </b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> Sabroso Helado cremoso, Supreme</spam></label></h2>
+     <label class="P" id="precio4">  <spam style="color:red"> 1000.00 cup </spam> </label> <br>
+ <input class="Cantidad" type="tel" min="0" id="producto4" name="producto4" placeholder="#"></input> 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+             </div>
+    <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto5">
+  <img class="IMG2" src ="imgheladobainilla.webp" alt="HELADO 5">
+ <label class="N"><h1><b> HELADOS BAINILLA </b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> 5 Bolas de un sabroso Helado de  Vainilla </spam></label></h2>
+     <label class="P" id="precio5">  <spam style="color:red"> 1200.00 cup </spam> </label> <br>
+ <input class="Cantidad" type="tel" min="0" id="producto5" name="producto5" placeholder="#"></input> 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+            </div>
+                </div>
+      <div class="contenedor">
+        <div class="ProductosDiv">
+    <section class="Cajon">
+<div class="productoDiv clearfix" id="Divproducto6">
+  <img class="IMG3" src ="imggalletasrellenas.jpg" alt="GALLETAS RELLENAS 6">
+ <label class="N"><h1><b> GALLETAS RELLENAS</b></h1> 
+  <spam  class="D" style="color:#1a1a1a"><h2> Galletas Rellenas con creme Nutella </spam></label></h2>
+     <label class="P" id="precio6">  <spam style="color:red"> 200.00 cup </spam> </label> <br>
+ <input class="Cantidad" type="tel" min="0" id="producto6" name="producto6" placeholder="#"></input> 
+ <input class="Enviar" type="button"  id="btncalcular" name="btncalcular" value=" Carrito"> 
+     <button class="Resetear" type="reset"> reset</button> 
+        </section>
+             </div>
+                </div>
+<footer id="footer">
+   <!--   < /div>  -->      <!--productosDiv -->
+</section>
+<br>
+ <br/>
+<!--Resumen total y pagar -->
+<section class="resumen">
+<h4> FACTURA DE PAGO</h4>
+<!-- DE ADENTRO -->
+<div class="contenedorResumen"> 
+
+   
+<img class="FFT" src="domicilio.png">
+    <div id="resumenProductos"></div>
+    
+  <br>
+    <!--Productos Pagar-->
+  <div class="TotalPagar">
+    <h1>Total a pagar:</h1>
+    
+<br>
+    <div id="totalAPagar"></div>
+
+    <label class="N">
+    <br>
+    <form>
+<input  class="W"  type="text" min="0" id="producto9" name="producto9" placeholder="Nombre y apellido" required>
+  </label>
+  <label class="N">
+<input  class="W"  type="text" min="0" id="producto10" name="producto10" placeholder="Dirección de envio" required>
+  </label>
+  <lable class="N">
+<input  class="W"  type="tel" min="0" id="producto11" name="producto11" placeholder="Número del contacto" required>
+  </lable>
+  
+  <br>
+
+  <a type="boton" class="BBB" onclick="enviar()" id="enviar"  href="#"> HACER PEDIDO   </a>  
+     </form>
+            </div>
+   </footer>
+<!--JAVASCRIPT CREADO POR FRANCISCO -->
+
+<script>
+
+(function(){
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function(){
+
+
+var productoVar = document.getElementById('producto1');
+
+var productoVar2 = document.getElementById('producto2');
+
+var productoVar3 = document.getElementById('producto3');
+
+var productoVar4 = document.getElementById('producto4');
+
+var productoVar5 = document.getElementById('producto5');
+
+var productoVar6 = document.getElementById('producto6');
+
+//botones
+
+var calcular = document.getElementById('btncalcular');
+
+var pagar = document.getElementById('btnpagar');
+
+
+
+//funciones productosDiv
+
+productoVar.addEventListener('blur', calcularProductos);
+
+productoVar2.addEventListener('blur', calcularProductos);
+
+productoVar3.addEventListener('blur', calcularProductos);
+
+productoVar4.addEventListener('blur', calcularProductos);
+
+productoVar5.addEventListener('blur', calcularProductos);
+
+productoVar6.addEventListener('blur', calcularProductos);
+
+
+//funciones botones
+calcular.addEventListener('click', calcularProductos);
+
+//pagar.addEventListener('click', pagarProductos);
+
+//divs
+
+var resumen = document.getElementById('resumenProductos');
+
+var pagar = document.getElementById('totalAPagar');
+
+
+
+
+
+
+function calcularProductos(event){
+  event.preventDefault();
+  var productos1 = parseInt(productoVar.value, 10) || 0,
+      productos2 = parseInt(productoVar2.value, 10) || 0,
+      productos3 = parseFloat(productoVar3.value, 10) || 0,
+      productos4 = Number(productoVar4.value, 10) || 0,
+      productos5 = Number(productoVar5.value, 10) || 0,
+
+      productos6 = Number(productoVar6.value, 10) || 0;
+
+
+
+     if ( (productos1 < 0) + (productos2 < 0) + (productos3 < 0) + (productos4 < 0) + (productos5 < 0) + (productos6 < 0)) {
+       alert("No puedes elegir un producto en signo negativo");
+
+     }else{
+      var totalPagar = (productos1 * 250)
+      + (productos2 * 5900) + (productos3 * 5000)
+      + (productos4 * 1000) + (productos5 * 1200) 
+      + (productos6 * 200);
+
+      console.log("Total a pagar: $" + totalPagar);
+
+
+      pagar.innerHTML = " $" + totalPagar.toFixed(2);
+      pagar.style.display = "block";
+
+
+}//else
+
+
+
+
+    var lista_productos = [];
+
+    if(productos1 >= 1){
+       lista_productos.push("Elegiste: " + productos1 + "PETER");
+
+    }
+
+    if(productos2 >= 1){
+   lista_productos.push("Elegiste: "+ productos2 + "KAKE");
+
+   }
+
+      if(productos3 >= 1){
+        lista_productos.push("Elegiste: "+ productos3 + "KAKE COCO");
+      }
+
+      if(productos4 >=1 ){
+        lista_productos.push("Elegiste: "+productos4 + "HELADO RISADO");
+      }
+      
+      if(productos5 >=1 ){
+        lista_productos.push("Elegiste: "+productos5 + "HELADOS BAINILLA");
+      }
+      
+if(productos6 >=1 ){
+        lista_productos.push("Elegiste: "+productos6 + "GALLETAS RELLENAS");
+      }
+
+   else{
+      console.log("Aun no agregas productos a tu Carrito");
+      resumen.style.display = "block";
+      var h1Element = document.createElement("H1");
+      var textNoCarrito = document.createTextNode("Aun no añades productos a tu carrito");
+      h1Element.appendChild(textNoCarrito);
+      h1Element.setAttribute('class', 'pagarProductos');
+      resumen.innerHTML += h1Element;
+    }
+
+
+    console.log(lista_productos);
+
+
+
+
+    resumen.innerHTML = '';
+  
+  
+  for (var i = 0; i < lista_productos.length; i++){
+
+
+              resumen.style.display = "block";
+          resumen.setAttribute('class', 'pagarProductos');
+          resumen.innerHTML += lista_productos[i] + "<br/>" + "<br/>";
+
+      }
+
+  }
+
+  });
+})();
+    
+    
+</script>
+
+
+   
+   
+   
+   
+   
+
+<script>
+           function enviar() {
+             const  producto1  = document.getElementById('producto1').value;
+             
+            const  producto2  = document.getElementById('producto2').value;
+            
+             const  producto3  = document.getElementById('producto3').value;
+             
+             const  producto4  = document.getElementById('producto4').value;
+            
+             const  producto5 = document.getElementById('producto5').value;
+             
+             const  producto6 = document.getElementById('producto6').value;
+            
+             const  producto9 = document.getElementById('producto9').value;
+            
+             const  producto10 = document.getElementById('producto10').value;
+
+             const  producto11 = document.getElementById('producto11').value;
+             
+
+
+             
+
+
+          
+            const enviar = document.getElementById('enviar');
+            
+
+            let mensaje = `https://api.whatsapp.com/send?phone=+5353571569&text=
+
+
+    *LA CREMA*
+
+
+*╭─────•◈•─────╮*
+                                                    *PEDIDO DE CONFITURAD*                                                     
+    
+ *Peter*: ${producto1}%20    
+                                                     *Galletas Rellenas*: ${producto6}%20             
+                                                            
+*╰─────•◈•─────╯*     
+             
+*╭─────•◈•─────╮*
+                                               *PEDIDO DE KAKE*
+                                                    *Kake de Chocolate*: ${producto2}%20 
+                                                    *Kake de Coco*: ${producto3}%20 
+                                                                  
+                                                               
+*╰─────•◈•─────╯*     
+                                                  *╭─────•◈•─────╮*      
+                                                                                                         *PEDIDO DE HELADO*
+                                                      *Helado Risado*: ${producto4}%20
+                                                      *Helado Vainilla*: ${producto5}%20
+                                 
+             
+                                                              
+*╰─────•◈•─────╯*               
+             
+                                                                                
+*╭─────•◈•─────╮*   
+                                                     *FORMULARIO DEL CLIENTE*                                                                       
+                                                                                                                                                                                                              *Nombre*: ${producto9}%20
+                                                                                                        *Dirección*: ${producto10}%20 
+                                                     *Teléfono*: ${producto11}%20
+        
+                                                                 
+*╰─────•◈•─────╯*   
+
+
+*╭─────•◈•─────╮*   
+
+                                                  *Envie este mensage para evaludar su compra, en breve seras atendido.                                    Gracias por elegirnos.*                                           
+*╰─────•◈•─────╯*  
+                                                                  
+                                                                                `
+          
+              enviar.href = mensaje;
+        }
+    
+    
+    </script>
+    
+
+
+
+<scr ipt type="text/javascript" lang="javascript" src="js/scripts.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+     
+
+
+   </body>
+</html>
+
+   
+     
