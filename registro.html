@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REJISTRO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .promo-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            display: inline-block;
+            border: 1px solid blue;
+        animation: glow 2s infinite alternate;
+            
+            
+        }
+        .promo-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            padding: 5px;
+            background: black;
+        }
+        
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: white;
+            text-shadow: 0 0 10px green, 0 0 20px green;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 10px blue, 0 0 20px blue;
+        }
+        
+        p {
+            color: #ccc;
+            font-size: 16px;
+        }
+        
+        .enviar  {
+            display: inline-block;
+            background:black;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 15px blue;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        .enviar :hover {
+            background: darkred;
+            box-shadow: 0 0 25px blue, 0 0 40px blue;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px blue; }
+            100% { box-shadow: 0 0 20px blue, 0 0 30px blue; }
+        }
+        
+        
+        
+       
+       /*  Label  */
+
+     .A{
+      font-size: 1.7rem;
+      margin-top: 100px;
+      padding: 50px 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      color: #fff ;
+      
+     }
+     
+     
+     
+     
+    .W {
+        width: 18rem  ;
+        background :#24303c;
+        padding :10px;
+        border-radius:10px;
+        margin:0.2rem;
+        margin-bottom:10px;/*altura entre uno y otro*/
+      /*  b order:1px  solid: #1f533c5;*/
+        font-size:20px;
+        color:#fff;
+        text-align: center;
+        text-align: left;
+    }
+        
+     
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="promo-box">
+        <img src="https://i.ibb.co/Fqq7hjPJ/FB-IMG-1739585255550.jpg" alt="Channel Logo">
+        <h1>Francisco García</h1>  
+        <h2> Freenlancer Diseño Web </h2>
+
+<p>Hola, soy un programador de páginas web quiero llevar su negocio a otro nivel creando su propia Tienda digital, una página web en su negocio hara más accesible su producto a cada cliente desde su hogar</p>
+        <br>
+        <br>
+    <form>
+ <label class="A"> Nombre y Apellido</label>      <br>
+        
+        
+<input  class="W"  type="text" min="0" id="producto91" name="producto91" placeholder="Nombre y apellido" required>
+ <br>
+ <br>
+ <br>
+ 
+ <label class="A"> Comentarios </label>      <br>
+    
+    <textarea class="W" cols="25" rows="6" border-radius="10px"; id="producto92" name="producto92" placeholder="Ingrese algún pedido en especifico" required></textarea>
+    <br>
+    
+    
+ 
+<br>
+<br>
+  <a type="boton" class="enviar" onclick="enviar()" id="enviar"  href="#"> ENVIAR  </a>  
+    
+     </form>
+     
+  
+    
+ </div>
+    
+
+
+
+   
+
+<script>
+           function enviar() {
+             const  producto91  = document.getElementById('producto91').value;
+             
+            const  producto92  = document.getElementById('producto92').value;
+            
+
+       
+            const enviar = document.getElementById('enviar');
+
+            let mensaje = `https://api.whatsapp.com/send?phone=+5353571569&text=
+
+
+
+*╭─────•◈•─────╮*   
+                                                     *FORMULARIO DEL CLIENTE*                                                                       
+                                                   *Nombre*: ${producto91}%20
+                                                   
+                                                 *Comentarios*: ${producto92}%20
+        
+                                        *╰─────•◈•─────╯*   
+
+
+*╭─────•◈•─────╮*   
+
+                                                  *Envie este mensage para afirmar su pedido, en breve seras atendido.                                    Gracias por elegirnos.*                                           
+*╰─────•◈•─────╯*  
+                                                                  
+                                                                                `
+          
+              enviar.href = mensaje;
+        }
+    
+    
+    </script>
+</body>
+</html>
