@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASERCA-DE : </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:ital,wght@0,200;0,400;1,200;1,400&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    /*-- CREADOR Y DUEÑO DEL CODIGO : FRANCISCO GARCIA--*/
+    
+    /* Variables globales */
+    :root {
+        --color-primary: #c5a47e;
+        --color-secondary: #3d3d3d;
+        --color-accent: #efb810;
+        --color-dark: #1a1a1a;
+        --color-light: #d0d0d0;
+        --transition: all 0.4s ease;
+    }
+    
+    /* Animaciones personalizadas */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    @keyframes blink {
+        0%, 100% { border-color: transparent; }
+        50% { border-color: var(--color-primary); }
+    }
+    
+    @keyframes textShine {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+    
+    @keyframes glow {
+        0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--color-accent), 0 0 20px var(--color-accent); }
+        100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--color-accent), 0 0 40px var(--color-accent); }
+    }
+    
+    @keyframes letterSpacing {
+        0% { letter-spacing: 0; }
+        100% { letter-spacing: 5px; }
+    }
+    
+    @keyframes rotate3D {
+        0% { transform: rotateY(0); }
+        100% { transform: rotateY(360deg); }
+    }
+    
+    @keyframes wave {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+    
+    @keyframes fadeInScale {
+        0% { opacity: 0; transform: scale(0.5); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes slideInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes borderGlow {
+        0% { box-shadow: 0 0 5px var(--color-primary); }
+        50% { box-shadow: 0 0 20px var(--color-primary); }
+        100% { box-shadow: 0 0 5px var(--color-primary); }
+    }
+    
+    /* PAGINA PRINCIPAL LOBY */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: black;
+        color: #fff;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Efecto de partículas de fondo */
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    .particle {
+        position: absolute;
+        background: rgba(197, 164, 126, 0.5);
+        border-radius: 50%;
+        opacity: 0;
+        animation: float 15s infinite linear;
+    }
+    
+    .container.mt-5 h1 {
+        text-decoration: black;
+    }
+    
+    
+       /*FOTO DE FG*/
+    .img1 {
+        width: 70px;
+        height: 70px; 
+        border-radius: 100%;
+        display: center;
+        margin: center;
+        transition: var(--transition);
+        animation: pulse 5s infinite;
+    }
+    
+    .img1:hover {
+        transform: rotate(5deg);
+        box-shadow: 0 0 20px var(--color-accent);
+    }
+    /************FIN *********/
+    
+    
+    
+    
+    
+    /* ENCABEZADO DE INICIO */
+    #header {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 1px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+        color: var(--color-accent);
+        text-shadow: 2px 13px 3px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+    
+    #header h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 3rem;
+        letter-spacing: 3px;
+        color: #fff;
+        margin: 0;
+        text-shadow: 5px 13px 5px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 15s ease-out, glow 2s infinite alternate;
+    }
+    
+    
+    
+    
+    .project-description1 {
+        font-family: 'Crimson Pro', serif;
+        font-size: 18px;
+        color: #b0b0b0;
+        margin-left: 35px;
+        border-left: 2px solid #3d3d3d;
+        padding-left: 20px;
+        animation: slideInRight 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .project-description1:hover {
+        border-left-color: var(--color-primary);
+        padding-left: 30px;
+    }
+    
+    .project-description2 {
+        font-family: 'Crimson Pro', serif;
+        font-size: 18px;
+        color: #fff;
+        margin-left: 20px;
+        padding-left: 20px;
+        animation: slideInLeft 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .project-description2:hover {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    
+    .introduction1 {
+        font-family: 'Crimson Pro', serif;
+        font-size: 22px;
+        color: #d0d0d0;
+        padding: 25px;
+        background: #252525;
+        border-radius: 3px;
+        border-left: 4px solid var(--color-primary);
+        margin: 30px 0;
+        animation: fadeIn 1.2s ease-out;
+        transition: var(--transition);
+    }
+    
+    .introduction1:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        animation: borderGlow 2s infinite;
+    }
+    
+    .project-title1 {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1;            
+        font-size: 24px;
+        color: var(--color-primary);
+        margin: 25px 0 15px;
+        padding-left: 2px;
+        position: relative;
+        animation: fadeIn 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .project-title1:hover {
+        color: #fff;
+        text-shadow: 0 0 10px var(--color-primary);
+        padding-left: 10px;
+    }
+    
+    /* BOTONES */
+    .button {
+        display: inline-block;
+        padding: 9px 10px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: black;
+        background-color: #bcbcbc;
+        border-radius: 25px;
+        margin: 10px;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeInScale 0.8s ease-out;
+    }
+    
+    .button:hover {
+        background-color: #bcbcbc;
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* CAJA DE MENU LATERAL */
+    .offcanvas-body {
+        background-color: var(--color-dark);
+    }
+    
+    .offcanvas-header {
+        text-align: center;
+        background-color: #fffff4;
+        color: black;
+        font-family: cursive;
+        font-size: 1.9rem;
+        height: 5.5rem;
+        text-shadow: 2px 11px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* color de la caja del menu */
+    .nav-link {
+        color: #fff;
+        font-size: 1.2rem;
+        transition: var(--transition);
+    }
+    
+    .nav-link:hover {
+        color: var(--color-primary);
+        padding-left: 10px;
+    }
+    
+    
+    
+    /*TEXTO DE ARRIBA DE LA PAGINA INICIO*/ 
+   
+   
+   .A1{
+       p adding-left :4px;
+       text-align :center;
+       margin:0;
+   }
+   
+   
+   
+    .A {
+        t ext-align :center;
+        p adding-left: 1px;
+        font-size: 3rem;
+        line-height: 1;
+        text-shadow: 5px 8px 3px rgba(0, 0, 0, 0.5);
+        t ext-align: left;
+        font-family: 'cursive';
+        color: black;
+        animation: typing 0.6s steps(5, end), blink 9s infinite;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+    }
+    
+    
+    
+    
+    
+    
+    /* BOTON DEL MENU LATERAL */
+    .B {
+        font-size: 0.7rem;
+        line-height: 1.6;
+        text-align: right;
+    }
+    
+    .carousel-caption d-none d-md-block {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.5);
+        text-align: left;
+    }
+    
+    .Zp {
+        color: #fff;
+    }
+    
+    
+    
+    
+    
+    
+    /* PIE DE PÁGINA */
+    .promo-box {
+        background: var(--color-dark);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        display: inline-block;
+        border: 2px solid black;
+        animation: glow 0.1s infinite alternate;
+        margin: 20px;
+        transition: var(--transition);
+    }
+    
+    .promo-box:hover {
+        transform: scale(1.02);
+        animation: shake 0.5s;
+    }
+    
+    .promo-box img2 {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 5px solid white;
+        padding: 5px;
+        background: black;
+    }
+    
+    .imagen-redonda {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        transition: var(--transition);
+        border: 3px solid transparent;
+        animation: fadeInScale 950s ease-out;
+    }
+    
+    .imagen-redonda:hover {
+        border-color: var(--color-primary);
+        transform: scale(1.05) rotate(5deg);
+    }
+    
+    h21 {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: white;
+        text-shadow: 0 0 10px green, 0 0 20px green;
+        animation: fadeIn 1.5s ease-out, pulse 2s infinite;
+    }
+    
+    h22 {
+        color: white;
+        font-size: 24px;
+        text-shadow: 0 0 10px red, 0 0 20px red;
+        animation: fadeIn 1.8s ease-out, shake 0.8s ease-out;
+    }
+    
+    pe {
+        color: #ccc;
+        font-size: 16px;
+        animation: fadeIn 2s ease-out;
+        transition: var(--transition);
+    }
+    
+    pe:hover {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    .enviar {
+        display: inline-block;
+        background: black;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 0 0 10px white;
+        box-shadow: 0 0 15px red;
+        animation: glow 1.5s infinite alternate, pulse 2s infinite;
+        transition: var(--transition);
+    }
+    
+    .enviar:hover {
+        background: blue;
+        color: black;
+        box-shadow: 0 0 25px black, 0 0 40px black;
+        transform: translateY(-3px);
+        animation: shake 0.5s;
+    }
+    
+    /* LABEL */
+    .La {
+        font-size: 1.7rem;
+        margin-top: 100px;
+        padding: 0px 0px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+    }
+    
+    /* INPUT */
+    .Ip {
+        width: 250px;
+        height: 18px;
+        font-size: 20px;
+        padding: 19px;
+        border-radius: 20px;
+        transition: var(--transition);
+    }
+    
+    .Ip:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    }
+    
+    .Lx {
+        font-size: 20px;
+        border-radius: 10px;
+        margin-top: 0px;
+    }
+    
+    /* CSS DEL MENU LATERAL */
+    .main-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: var(--color-dark);
+        color: #e0e0e0;
+        line-height: 1.8;
+        font-family: 'Crimson Text', serif;
+        animation: fadeIn 1.5s ease-out;
+    }
+    
+    .header {
+        text-align: center;
+        font-family: 'Headlines', sans-serif;  
+        font-size: 38px;
+        margin-bottom: 30px;
+        color: var(--color-primary);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        border-bottom: 1px solid #3d3d3d;
+        padding-bottom: 20px;
+        line-height: 1.4;
+        animation: fadeIn 1s ease-out, letterSpacing 2s infinite alternate;
+    }
+    
+    .tagline {
+        font-family: 'Alegreya', serif;
+        font-size: 0.9rem;
+        color: #a8a8a8;
+        letter-spacing: 0.5px;
+        margin-top: 15px;
+        animation: fadeIn 1.2s ease-out;
+    }
+    
+    .section-heading {
+        font-family: 'Alegreya SC', serif;
+        font-size: 28px;
+        margin: 50px 0 30px;
+        color: var(--color-primary);
+        position: relative;
+        padding-left: 20px;
+        animation: slideInLeft 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .section-heading:hover {
+        padding-left: 30px;
+        color: #fff;
+        text-shadow: 0 0 10px var(--color-primary);
+    }
+    
+    .section-heading:before {
+        content: "■";
+        color: #7a6652;
+        position: absolute;
+        left: -10px;
+        top: -5px;
+        font-size: 40px;
+        animation: pulse 2s infinite;
+    }
+    
+    .introduction {
+        font-family: 'Crimson Pro', serif;
+        font-size: 22px;
+        color: #d0d0d0;
+        padding: 25px;
+        background: #252525;
+        border-radius: 3px;
+        border-left: 4px solid #c5a47e;
+        margin: 30px 0;
+        animation: fadeIn 1.5s ease-out;
+        transition: var(--transition);
+    }
+    
+    .introduction:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-left-width: 8px;
+    }
+    
+    .philosophy-list {
+        list-style: none;
+        padding-left: 30px;
+    }
+    
+    .philosophy-list li {
+        font-family: 'Cardo', serif;
+        font-size: 20px;
+        margin-bottom: 25px;
+        padding-left: 30px;
+        position: relative;
+        color: #d0d0d0;
+        animation: slideInRight 1s ease-out;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+    
+    .philosophy-list li:nth-child(1) { animation-delay: 0.2s; }
+    .philosophy-list li:nth-child(2) { animation-delay: 0.4s; }
+    .philosophy-list li:nth-child(3) { animation-delay: 0.6s; }
+    .philosophy-list li:nth-child(4) { animation-delay: 0.8s; }
+    
+    .philosophy-list li:before {
+        content: "◈";
+        color: #c5a47e;
+        position: absolute;
+        left: -20px;
+        top: -2px;
+        font-size: 24px;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .philosophy-list li:hover {
+        color: #fff;
+        padding-left: 40px;
+    }
+    
+    .projects { 
+        counter-reset: project-counter;
+        color: #d0d0d0;
+    }
+    
+    .project-title {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1;            
+        font-size: 24px;
+        color: #c5a47e;
+        margin: 25px 0 15px;
+        padding-left: 35px;
+        position: relative;
+        animation: fadeIn 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .project-title:hover {
+        color: #fff;
+        text-shadow: 0 0 10px var(--color-primary);
+        padding-left: 45px;
+    }
+    
+    .project-title:before {
+        counter-increment: project-counter;
+        content: counter(project-counter);
+        position: absolute;
+        left: 0;
+        top: -5px;
+        font-size: 32px;
+        color: #7a6652;
+        font-family: 'UnifrakturMaguntia', cursive;
+        animation: rotate3D 3s infinite linear;
+    }
+    
+    .project-description {
+        font-family: 'Crimson Pro', serif;
+        font-size: 18px;
+        color: #b0b0b0;
+        margin-left: 35px;
+        border-left: 2px solid #3d3d3d;
+        padding-left: 20px;
+        animation: slideInUp 1s ease-out;
+        transition: var(--transition);
+    }
+    
+    .project-description:hover {
+        border-left-color: var(--color-primary);
+        padding-left: 30px;
+        color: #fff;
+    }
+    
+    .manifesto {
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        padding: 30px;
+        background: #252525;
+        border-radius: 1px;
+        margin: 40px 0;
+        position: relative;
+        border: 1px solid #3d3d3d;
+        color: #d0d0d0;
+        animation: fadeIn 1.5s ease-out;
+        transition: var(--transition);
+    }
+    
+    .manifesto:hover {
+        background: #2a2a2a;
+        transform: scale(1.02);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .manifesto:before {
+        content: "“";
+        font-size: 80px;
+        color: #7a6652;
+        position: absolute;
+        left: -10px;
+        top: -40px;
+        font-family: 'Lato', sans-serif;
+        animation: pulse 2s infinite;
+    }
+    
+    .final-thought {
+        font-family: 'Crimson Pro',serif;
+        font-size: 26px;
+        color: #c5a47e;
+        text-align: center;
+        margin: 60px 0;
+        padding: 30px;
+        line-height: 1;
+        border-top: 1px solid #3d3d3d;
+        border-bottom: 1px solid #3d3d3d;
+        animation: fadeIn 2s ease-out;
+        transition: var(--transition);
+    }
+    
+    .final-thought:hover {
+        color: #fff;
+        letter-spacing: 1px;
+        background: rgba(197, 164, 126, 0.1);
+    }
+    
+    /* Animaciones para texto con efecto de máquina de escribir */
+    .typewriter {
+        overflow: hidden;
+        border-right: .15em solid var(--color-primary);
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+    }
+    
+    /* Efecto de texto brillante */
+    .shining-text {
+        background: linear-gradient(105deg, #cc0000, #66c033, #339966, #00cccc, #0099ff, #6a00ff, #ff00f2);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textShine 3s linear infinite;
+    }
+    
+    /* Efecto de texto con onda */
+    .wavy-text {
+        display: inline-block;
+    }
+    
+    .wavy-text span {
+        display: inline-block;
+        animation: wave 2s infinite;
+        animation-delay: calc(0.1s * var(--i));
+    }
+    
+    @media (max-width: 600px) {
+        body { padding: 20px 15px; }
+        .header { font-size: 36px; }
+        .section-heading { font-size: 24px; }
+        .introduction { font-size: 18px; padding: 15px; }
+        
+        /* Ajustar animaciones para móviles */
+        .typewriter {
+            animation: none;
+            border-right: none;
+            white-space: normal;
+        }
+    }
+    
+    /* Contenedor para partículas */
+    #particles-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    .particle {
+        position: absolute;
+        background: rgba(197, 164, 126, 0.5);
+        border-radius: 50%;
+        opacity: 0;
+        animation: float 15s infinite linear;
+    }
+    
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <!-- Contenedor de partículas -->
+    <div id="particles-container"></div>
+
+    <!-- ESTE EL EL CODIGO DEL MENU -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+        
+        
+        
+        
+        <div class="container-fluid">
+            <a href="FG-Studio.html">
+                <img class="img1" src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg"> <br>
+            </a>
+            <div class="A1">
+            <div class="A">FG-Studio</div>
+            </div>
+            <br>
+            
+            <!--
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <div class="B"><b> 💫</b></div>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            -->
+            
+            
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">AGRADECIMIENTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                
+                <!-- CODIGO DEL MENU LATERAL -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <div class="promo-box">
+                            <img src="https://i.ibb.co/SX227d4q/FB-IMG-1739585255550.jpg" alt="Imagen Redonda" class="imagen-redonda">
+                            <br>
+                            <h21>Francisco García</h21>  
+                            <br>
+                            <h22> Freenlancer Diseño Web </h22>
+                            <br>
+                            <pe>
+                                <br>Este último espacio está esclusibamente dedicado a todas esas personas que directa o indirectamente me apollaron en la creación de este prollecto <br>
+                                Aprovecho para darle gracias <br>
+                                Agradecemos a mi Maestro de diseño y programación Zuzuke, Por averme encaminado en este increíble mundo del desarrollo web, Agradezco a mi Madre Yolanda, Por su apoyo incondicional, agradezco a Mi hermana Maida, Por  su apoyo y donaciones para la creación de este sitio.
+                                quisiera agradecer a mi hijo  
+                                Fran,por sus ideas ininnovadoras y Especialmente a mi habuelo Adolfo por aver aprobado cada ensayo en su dispositivo. 
+                                <br>
+                                gracias, y que Dios los vendida a todos.
+                            </pe>
+                            <br>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- COMIENSO DE LA PAGIMA PRIMCIPAL  -->
+    <br><br><br><br><br>
+    
+    <div class="main-content">
+        <div class="header">
+            <span class="wavy-text">
+                <span style="--i:1">H</span>
+                <span style="--i:2">o</span>
+                <span style="--i:3">l</span>
+                <span style="--i:4">a</span>
+            </span> 👋<br>
+            <span class="tagline">Bienvenido a | <span class="shining-text">FG-Studio</span> | un mercado digital <br>Tu mejor obción</span>
+        </div>
+        
+        
+        
+        
+        
+
+        <div class="section-heading">Qué es FGstudio</div>
+        <p class="introduction"> 
+            <span class="wavy-text">
+                <span style="--i:1">I</span>
+                <span style="--i:2">n</span>
+                <span style="--i:3">t</span>
+                <span style="--i:4">r</span>
+                <span style="--i:5">o</span>
+                <span style="--i:6">d</span>
+                <span style="--i:7">u</span>
+                <span style="--i:8">c</span>
+                <span style="--i:9">c</span>
+                <span style="--i:10">i</span>
+                <span style="--i:11">ó</span>
+                <span style="--i:12">n</span>
+            </span>
+            
+            <br><br>
+            Somos un Proyecto basado en el Diseño web y marquetin digital, nuestro proposito es expandir al mercado mundial sus ofertas laborales y promover su negocio o productos ofertados; dandole un espacio en la internet. Contamos con  un equipo de Freenlancer programadores y diseñadores en el campo del marquetin digital desarrollo de app creacion y restauración de páginas web.
+        </p>
+
+        <hr>
+        
+        
+        <div class="section-heading">Objetivo</div>
+        <p class="introduction"> 
+            <span class="wavy-text">
+                <span style="--i:1">O</span>
+                <span style="--i:2">b</span>
+                <span style="--i:3">j</span>
+                <span style="--i:4">e</span>
+                <span style="--i:5">t</span>
+                <span style="--i:6">i</span>
+                <span style="--i:7">v</span>
+                <span style="--i:8">o</span>
+            <!--    <span style="--i:9">c</span>
+                <span style="--i:10">i</span>
+                <span style="--i:11">ó</span>
+                <span style="--i:12">n</span>-->
+            </span>
+            <br><br>
+Sabemos que dadas las circunstancias, en muchas ocasiones se nos dificulta darle una optima promoción a nuestros proyectos. <br> La tecnología avanza a tal punto que usted pudiera elevar su forma de promover su negocio.<br> Hoy en dia todo es digital y la tecnología avanza a pasos gigantescos, Nuestros proyecto se basa en facilitar las ventas en linea logrando que cada cliente tenga acceso desde su hogar y pueda realizar el pago con los distinto tipos de plataformas existentes y a su vez garantiza el marquetin digital a los proyectos que husen dicho servicio.
+        </p>
+
+
+
+        
+        <div class="section-heading">Facilitar   </div>
+        <p class="introduction"> 
+            <span class="wavy-text">
+                <span style="--i:1">F</span>
+                <span style="--i:2">a</span>
+                <span style="--i:3">c</span>
+                <span style="--i:4">i</span>
+                <span style="--i:5">l</span>
+                <span style="--i:6">i</span>
+                <span style="--i:7">t</span>
+                <span style="--i:8">a</span>
+                <span style="--i:9">r</span>
+          <!--      <span style="--i:10">i</span>
+                <span style="--i:11">ó</span>
+                <span style="--i:12">n</span>
+                -->
+            </span>
+            <br><br>
+Sabemos que dadas las circunstancias, en muchas ocasiones se nos dificulta darle una optima promoción a nuestros proyectos. <br> La tecnología avanza a tal punto que usted pudiera elevar su forma de promover su negocio.<br> Hoy en dia todo es digital y la tecnología avanza a pasos gigantescos, Nuestros proyecto se basa en facilitar las ventas en linea logrando que cada cliente tenga acceso desde su hogar y pueda realizar el pago con los distinto tipos de plataformas existentes y a su vez garantiza el marquetin digital a los proyectos que husen dicho servicio.
+    </p>
+
+
+
+        <p class="introduction"> 
+            <span class="wavy-text">
+                <span style="--i:1">F</span>
+                <span style="--i:2">a</span>
+                <span style="--i:3">c</span>
+                <span style="--i:4">i</span>
+                <span style="--i:5">l</span>
+                <span style="--i:6">i</span>
+                <span style="--i:7">t</span>
+                <span style="--i:8">a</span>
+                <span style="--i:9">r</span>
+          <!--      <span style="--i:10">i</span>
+                <span style="--i:11">ó</span>
+                <span style="--i:12">n</span>
+                -->
+            </span>
+            <br><br>
+
+             Facilitar la promoción de sus proyecto creándole una web personalizada que  le brinda al usuario  más profesionalidad a su negosio elevando su marca personal y autenticidad de su proyecto 
+            Facilitar a cada cliente el producto en su hogar, de forma rápida y  segura, esto hara  que nuevos clientes prefieran la opción del envio a domicilio</p>
+            
+            
+            
+
+ <p class="introduction"> 
+            <span class="wavy-text">
+                <span style="--i:1">F</span>
+                <span style="--i:2">a</span>
+                <span style="--i:3">c</span>
+                <span style="--i:4">i</span>
+                <span style="--i:5">l</span>
+                <span style="--i:6">i</span>
+                <span style="--i:7">t</span>
+                <span style="--i:8">a</span>
+                <span style="--i:9">r</span>
+          <!--      <span style="--i:10">i</span>
+                <span style="--i:11">ó</span>
+                <span style="--i:12">n</span>
+                -->
+            </span>
+            <br><br>
+
+
+Las grandes Empresas diseñan una web para promover sus productos al mercado internacional. ya es hora de estar a la altura de su imaginación y elevar su promoción a lo más alto, creando su propio catálogo digital y agregar la URL a su targeta de presentación
+
+
+
+
+    </p>
+    
+
+        <hr>
+
+        <div class="section-heading">Preguntas Frecuentes</div>
+        <ol class="projects">
+            <li>
+                <div class="project-title">Que es una página web</div>
+                <p class="project-description">
+                    Una página web es un documento electrónico accesible a través de internet mediante navegadores que  contiene información organizada precisamente sobre el tema seleccionado  y presentada de forma visual. Las páginas web se utilizan para diversos propósitos, como: Proporcionar información más detallada. Promover productos, brindar algun  servicios Ect.
+                </p>
+                <hr>
+            </li>
+           
+            <li>
+                <div class="project-title">Que es un sub dominio</div>
+                <p class="project-description">Un sub dominio es una forma de tener una dirección en en intertpara un sitio (web)  relacionado, como anexo, a una web principal. Los sub dominios son del tipo: https://sub dominio.dominio.com, éstos apuntan realmente a una carpeta del propio alojamiento que has contratado, pero mostrando su contenido desde el sub dominio.</p>
+                <hr>
+            </li>
+            
+            <li>
+                <div class="project-title">Que es un Freenlancer</div>
+                <p class="project-description"> Un Freenlancer es un profesional autonomo en el área de la informática y sus ramas, Espesificamemte en la creación y desarrollo de app y páginas web usando lenguaje complejos de programación como el Javascript , HTML , CSS , C++ , Java , y muchos más  </p>
+                <hr>
+            </li>
+        </ol>
+
+        <blockquote class="manifesto">
+            No vendemos, facilitamos <br>que su venta sea la más alta, con más claridad y trasparencia 
+            contáctenos, decídete a darle  un paso más al desarrollo y  crecimiento de su negocio, el exito está en sus manos 
+        </blockquote>
+        
+        <p class="final-thought">
+            puedes contactarnos directamente para gestionar su propio catálogo digital <br>
+            asegúrese de rellenar correctamente el siguiente formulario y ser espesifico en comentar como deseas crear su web para su negosio 
+            <br><br>
+            <a type="boton" class="enviar" href="REJISTRO.html"> CONTACTAR  </a>  
+        </p>
+    </div>
+    
+    <!-- SCRIPT DEL MENU -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+
+    
+    </body>
+    </html>
+    
