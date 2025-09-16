@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonito Estilo</title>
+  
+  <style>
+    
+    
+    
+    
+    
+    
+    
+  </style>
+  
+</head>
+   <body>
+    
+    
+<script src="html5-qrcode.min.js"></script>
+    
+    
+<div style="width: 500px" id="reader"></div>
+    
+    
+    
+    
+    
+
+
+
+<script>
+    
+function onScanSuccess(decodedText, decodedResult) {
+    // Handle on success condition with the decoded text or result.
+    console.log(`Scan result: ${decodedText}`, decodedResult);
+}
+
+let html5QrcodeScanner = new Html5QrcodeScanner(
+	"reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+    
+    
+    
+</script>
+
+     
+
+   </body>
+</html>
