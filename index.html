@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital | FG-Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Alegreya:wght@400;500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta property="og:title" content="Tienda LA REINA">
+    <meta property="og:description" content="Aproveche las Ofertas con descuento del 5%">
+    <meta property="og:image" content="https://d.top4top.io/p_3525b1u9b0.jpg">
+    <meta property="og:url" content="https://webstudioxz.github.io/Freenlancer">
+    <meta property="og:type" content="website">
+    
+    
+    
+    
+    
+    
+    <style>
+        :root {
+            --primary-color: #3a36e0;
+            --secondary-color: #c5a47e;
+            --accent-color: #ff3860;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #121212;
+            --light-text: #e0e0e0;
+            --medium-text: #a8a8a8;
+            --card-bg: #252525;
+            --card-hover: #2e2e2e;
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --neon-glow: 0 0 10px var(--primary-color), 0 0 20px rgba(58, 54, 224, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--light-text);
+            font-family: 'Crimson Text', serif;
+            line-height: 1.6;
+            padding: 0 ;
+            margin:0;
+            m in-height: 100vh;
+            ov erflow-x: hidden;
+        }
+        
+        . excontainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header styles */
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-top :-5rem;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            border-radius: 50%;
+        }
+        
+        .tagline {
+            font-family: 'Alegreya', serif;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+            margin-top: 4rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px rgba(197, 164, 126, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(197, 164, 126, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(197, 164, 126, 0.5); }
+        }
+        
+        .tagline::before, .tagline::after {
+            content: "✦";
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 1.2rem;
+            animation: spin 4s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        
+        
+        
+        .FG-STUDIO{
+         width: 100%;
+         height: 100%;
+         align-items: center;
+        }
+        
+        
+        /* Main banner */
+        .main-banner {
+            width: 100%;
+            height: 180px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            margin: 25px 0;
+            box-shadow: var(--box-shadow);
+            animation: zoomIn 2.5s ease-out;
+        }
+        
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.10);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        
+        
+        
+        
+        /* Button container */
+        .BTN_S {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        /* Button styles */
+        .BT {
+            display:flex; inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--light-text);
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(58, 54, 224, 0.3);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .BT:nth-child(1) { animation-delay: 0s; }
+        .BT:nth-child(2) { animation-delay: 0.2s; }
+        .BT:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes float {
+            0% { transform: translateY(10px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(10px); }
+        }
+        
+        .BT::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(58, 54, 224, 0.4), transparent);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .BT:hover {
+            color: white;
+            box-shadow: var(--neon-glow);
+            transform: translateY(-3px);
+            animation: none;
+        }
+        
+        .BT:hover::before {
+            left: 100%;
+        }
+        
+        .BT i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        
+        
+        /* Carousel styles */
+        .carrusel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) transparent;
+            margin: 30px 0;
+        }
+        
+        .carrusel::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .carrusel::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        .carrusel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .productos {
+            flex: 0 0 auto;
+            width: 200px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-8rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .productos:nth-child(1) { animation-delay: 0.1s; }
+        .productos:nth-child(2) { animation-delay: 0.2s; }
+        .productos:nth-child(3) { animation-delay: 0.3s; }
+        .productos:nth-child(4) { animation-delay: 0.4s; }
+        .productos:nth-child(5) { animation-delay: 0.5s; }
+        
+        .productos:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), var(--neon-glow);
+            background: var(--card-hover);
+        }
+        
+        .IMG_LINK {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .productos:hover .IMG_LINK {
+            transform: scale(1.05);
+        }
+        
+        .MOVER_NOMB_LINK {
+            padding: 15px 10px;
+            text-align: center;
+        }
+        
+        .CSS_NOMBRE {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin: 0;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none !important;
+        }
+        
+        .contenedor1 {
+            text-decoration: none !important;
+        }
+        
+        .productos:hover .CSS_NOMBRE {
+            color: var(--secondary-color);
+        }
+        
+        /* Description section */
+        .P-D {
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+        
+        .project-description {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: var(--medium-text);
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+            line-height: 1.8;
+            text-align: left;
+            animation: fadeIn 0.9s ease-out;
+        }
+        
+        
+   .project-description em {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        
+        
+        
+        
+hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 30px 0;
+            opacity: 0.5;
+        }
+        
+        /* Manifesto section */
+        .manifesto {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin: 50px 0;
+            position: relative;
+            border: 1px solid rgba(197, 164, 126, 0.2);
+            color: var(--light-text);
+            text-align: center;
+            letter-spacing: 0.5px;
+            line-height: 1.7;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            animation: fadeInUp 10s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .manifesto::before {
+            content: "“";
+            font-size: 80px;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 20px;
+            top: -10px;
+            opacity: 0.2;
+            font-family: 'Alegreya', serif;
+        }
+        
+        .manifesto::after {
+            content: "”";
+            font-size: 80px;
+            color: var(--secondary-color);
+            position: absolute;
+            right: 20px;
+            bottom: -30px;
+            opacity: 0.2;
+            font-family: 'Alegreya', serif;
+        }
+        
+        .manifesto p {
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: 0;
+            animation: pulseCircle 3s ease-in-out infinite;
+        }
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+    </style>
+    </head>
+    <body>
+
+    <div class="container">
+        <header class="header animate-fadein">
+            <h1 class="tagline">Catálogo Digital | FG-Studio</h1>
+        </header>
+
+
+       
+ <div class="decorative-circle circle-1"></div>
+ 
+    <div class="main-banner animate-fadein">
+            <img class="FG-STUDIO" src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg" alt="FG-Studio Banner">
+        </div>
+
+
+        <div class="BTN_S animate-fadein">
+            <a class="BT" href="hacercade.html">
+                <i class="fas fa-info-circle"></i> Más de Nosotros
+            </a>
+            
+            
+
+        
+ <div class="decorative-circle circle-2"></div>
+  
+  
+       
+         <a class="BT" href="contactar.html">
+                <i class="fas fa-envelope"></i> Contáctanos
+            </a>
+            
+            <a class="BT" href="#">
+                <i class="fas fa-map-signs"></i> Indicaciones
+            </a>
+        </div>
+        
+        <hr>
+        
+        
+        
+        
+        
+        <div class="carrusel">
+            <a href="Electrodomesticos.html" class="contenedor1"> 
+                <div class="productos">
+                    <img src="https://g.top4top.io/p_3532no8xc0.png" class="IMG_LINK">
+                    <div class="MOVER_NOMB_LINK">
+                        <h3 class="CSS_NOMBRE">ELECTRODOMÉSTICO</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="Fumigacion1.html" class="contenedor1"> 
+                <div class="productos">
+                    <img src="https://h.top4top.io/p_3532u3ce60.png" class="IMG_LINK">
+                    <div class="MOVER_NOMB_LINK">
+                        <h3 class="CSS_NOMBRE">FUMIGACIÓN</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="caja.html" class="contenedor1"> 
+                <div class="productos">
+                    <img src="https://a.top4top.io/p_3550p4e0j0.jpg" class="IMG_LINK">
+                    <div class="MOVER_NOMB_LINK">
+                        <h3 class="CSS_NOMBRE">INVENTARIO</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="#" class="contenedor1"> 
+                <div class="productos">
+                    <img src="https://l.top4top.io/p_3517fhhys0.jpg" class="IMG_LINK">
+                    <div class="MOVER_NOMB_LINK">
+                        <h3 class="CSS_NOMBRE">REGALOS</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="#" class="contenedor1"> 
+                <div class="productos">
+                    <img src="https://a.top4top.io/p_35179hrcu2.jpg" class="IMG_LINK">
+                    <div class="MOVER_NOMB_LINK">
+                        <h3 class="CSS_NOMBRE">MUEBLES</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="P-D animate-fadein">
+            <div class="project-description">
+                <p><em>Automatice su Negocio para que Venda por usted<br>Visítenos en confianza y navegue seguro por nuestro catálogo Digital.</em></p>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <blockquote class="manifesto animate-fadein">
+            <p>FG-Studio</p>
+            <p>Su mejor opción para automatizar su negocio</p>
+            <p>Cree su catálogo digital ya</p>
+            <p>Lleve sus productos a cada cliente con más eficiencia, rapidez, fácil, seguro y económico</p>
+        </blockquote>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script>
+        // Efecto de aparición suave al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadein');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = 1;
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+            
+            // Efecto de iluminación en botones al pasar el mouse
+            const buttons = document.querySelectorAll('.BT');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function(e) {
+                    const x = e.pageX - button.offsetLeft;
+                    const y = e.pageY - button.offsetTop;
+                    
+                    button.style.setProperty('--x', x + 'px');
+                    button.style.setProperty('--y', y + 'px');
+                });
+            });
+        });
+    </script>
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+    </html>
