@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo y Belleza - Peluquería Profesional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:ital,wght@0,200;0,400;1,200;1,400&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    /* Variables globales */
+    :root {
+        --color-primary: #c5a47e;
+        --color-secondary: #3d3d3d;
+        --color-accent: #d4af37;
+        --color-dark: #1a1a1a;
+        --color-light: #f8f9fa;
+        --color-white: #ffffff;
+        --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    /* Animaciones personalizadas mejoradas */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes borderGlow {
+        0%, 100% { box-shadow: 0 0 5px var(--color-primary), 0 0 10px rgba(197, 164, 126, 0.3); }
+        50% { box-shadow: 0 0 20px var(--color-primary), 0 0 30px rgba(197, 164, 126, 0.5); }
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    /* PAGINA PRINCIPAL */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #fefefe;
+        color: #333;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+    
+    /* Efecto de partículas de fondo mejorado */
+    #particles-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    
+    .particle {
+        position: absolute;
+        background: rgba(197, 164, 126, 0.3);
+        border-radius: 50%;
+        opacity: 0;
+        animation: float 18s infinite ease-in-out;
+    }
+    
+    /* Logo */
+    .logo-img {
+        width: 80px;
+        height: 80px; 
+        border-radius: 50%;
+        object-fit: cover;
+        transition: var(--transition);
+        animation: pulse 4s infinite ease-in-out, fadeIn 1.5s ease-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--color-primary);
+    }
+    
+    .logo-img:hover {
+        transform: rotate(10deg) scale(1.1);
+        box-shadow: 0 0 25px var(--color-accent);
+        animation: none;
+    }
+    
+    /* ENCABEZADO DE INICIO */
+    #header {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+        color: var(--color-dark);
+        backdrop-filter: blur(12px);
+        animation: slideInDown 0.8s ease-out;
+    }
+    
+    @keyframes slideInDown {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(0); }
+    }
+    
+    #header h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        color: var(--color-dark);
+        margin: 0;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tagline {
+        font-family: 'Crimson Pro', serif;
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        letter-spacing: 0.5px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
+        padding: 0 20px;
+    }
+    
+    .hero-content h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+    }
+    
+    /* BOTONES */
+    .btn-primary-custom {
+        display: inline-block;
+        padding: 12px 30px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: white;
+        background: var(--color-primary);
+        border: none;
+        border-radius: 30px;
+        margin: 10px;
+        transition: var(--transition);
+        animation: fadeIn 0.8s ease-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-primary-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background: #b8946a;
+        color: white;
+    }
+    
+    .btn-secondary-custom {
+        display: inline-block;
+        padding: 12px 30px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--color-dark);
+        background: transparent;
+        border: 2px solid var(--color-primary);
+        border-radius: 30px;
+        margin: 10px;
+        transition: var(--transition);
+        animation: fadeIn 0.8s ease-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+    }
+    
+    .btn-secondary-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background: var(--color-primary);
+        color: white;
+    }
+    
+    /* Secciones */
+    .section {
+        padding: 80px 0;
+    }
+    
+    .section-light {
+        background: var(--color-light);
+    }
+    
+    .section-dark {
+        background: var(--color-dark);
+        color: white;
+    }
+    
+    .section-heading {
+        font-family: 'Cinzel', serif;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: var(--color-dark);
+        text-align: center;
+        position: relative;
+    }
+    
+    .section-dark .section-heading {
+        color: white;
+    }
+    
+    .section-heading:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--color-primary);
+    }
+    
+    /* Servicios */
+    .service-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: var(--transition);
+        margin-bottom: 30px;
+        height: 100%;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .service-content {
+        padding: 25px;
+    }
+    
+    .service-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--color-dark);
+    }
+    
+    .service-description {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .service-price {
+        font-weight: 600;
+        color: var(--color-primary);
+        font-size: 1.2rem;
+    }
+    
+    /* Galería */
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-img {
+        transform: scale(1.05);
+    }
+    
+    .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+    }
+    
+    /* Testimonios */
+    .testimonial-card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin: 15px;
+        position: relative;
+    }
+    
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #555;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+    
+    .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+    
+    .testimonial-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .testimonial-rating {
+        color: var(--color-accent);
+    }
+    
+    /* CARRUSEL */
+    .carousel-container {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel-slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 500px;
+    }
+    
+    .carousel-slide {
+        min-width: 100%;
+        position: relative;
+    }
+    
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .slide-content {
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .slide-content h3 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+    
+    .carousel-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    .carousel-control {
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .carousel-control:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .carousel-indicators {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .indicator.active {
+        background: white;
+        transform: scale(1.2);
+    }
+    
+    /* Contacto */
+    .contact-info {
+        margin-bottom: 30px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    
+    .contact-icon {
+        background: var(--color-primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-form {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .form-control {
+        border-radius: 5px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        transition: var(--transition);
+    }
+    
+    .form-control:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 0.2rem rgba(197, 164, 126, 0.25);
+    }
+    
+    /* Footer */
+    .footer {
+        background: var(--color-dark);
+        color: white;
+        padding: 60px 0 30px;
+    }
+    
+    .footer-logo {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: var(--color-primary);
+    }
+    
+    .footer-links h5 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-links h5:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--color-primary);
+    }
+    
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: #bbb;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+        color: var(--color-primary);
+        padding-left: 5px;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: var(--transition);
+    }
+    
+    .social-link:hover {
+        background: var(--color-primary);
+        transform: translateY(-3px);
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+    
+    /* Responsive mejorado */
+    @media (max-width: 1200px) {
+        .hero-content h2 {
+            font-size: 3rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .hero-content h2 {
+            font-size: 2.7rem;
+        }
+        
+        .section-heading {
+            font-size: 2.2rem;
+        }
+        
+        .carousel-container {
+            height: 450px;
+        }
+        
+        .carousel-slides {
+            height: 450px;
+        }
+        
+        .service-card {
+            margin-bottom: 25px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-content h2 {
+            font-size: 2.3rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
+        }
+        
+        .carousel-container {
+            height: 400px;
+        }
+        
+        .carousel-slides {
+            height: 400px;
+        }
+        
+        .service-card {
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card {
+            margin: 10px 0;
+        }
+        
+        .contact-form {
+            padding: 20px;
+        }
+        
+        .footer {
+            padding: 40px 0 20px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .hero-content h2 {
+            font-size: 1.8rem;
+        }
+        
+        .hero-content p {
+            font-size: 1rem;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-heading {
+            font-size: 1.8rem;
+            margin-bottom: 35px;
+        }
+        
+        .carousel-container {
+            height: 300px;
+        }
+        
+        .carousel-slides {
+            height: 300px;
+        }
+        
+        .carousel-control {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-primary-custom, .btn-secondary-custom {
+            padding: 10px 25px;
+            font-size: 0.9rem;
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        #header h1 {
+            font-size: 1.7rem;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+        }
+        
+        .hero-section {
+            margin-top: 70px;
+            height: 70vh;
+        }
+        
+        .contact-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            margin-bottom: 10px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .hero-content h2 {
+            font-size: 1.6rem;
+        }
+        
+        .hero-content p {
+            font-size: 0.9rem;
+        }
+        
+        .section-heading {
+            font-size: 1.6rem;
+        }
+        
+        .carousel-container {
+            height: 250px;
+        }
+        
+        .carousel-slides {
+            height: 250px;
+        }
+        
+        .slide-content h3 {
+            font-size: 1.4rem;
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de partículas -->
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <a href="index.html">
+                        <img class="logo-img" src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Estilo y Belleza">
+                    </a>
+                    <div class="ms-3">
+                        <h1 class="mb-0">Estilo y Belleza</h1>
+                        <div class="tagline">Peluquería & Estilismo Profesional</div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-primary-custom d-none d-md-inline-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                        <i class="fas fa-bars me-2"></i>Menú
+                    </button>
+                    <button class="btn btn-primary-custom d-md-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú lateral -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Estilo y Belleza</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#galeria">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testimonios">Testimonios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+            <div class="mt-4">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p id="phone-number-display">+53 5620-31-89</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Dirección</h4>
+                            <p>Centro Habana <br> Calle Manrrique #563 / Salud y Dragones </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horario</h4>
+                            <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Hero -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-content">
+            <h2>Transforma tu look, realza tu belleza</h2>
+            <p>En Estilo y Belleza nos especializamos en crear looks únicos que reflejen tu personalidad y realcen tu belleza natural.</p>
+            <a href="#contacto" class="btn btn-primary-custom">Reserva tu cita</a>
+            <a href="#servicios" class="btn btn-secondary-custom">Ver servicios</a>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="section section-light" id="servicios">
+        <div class="container">
+            <h2 class="section-heading">Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://a.top4top.io/p_3577x7oka5.jpg" alt="Cortes de Cabello" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title"> Peinado con moñitos </h3>
+                            <p class="service-description">Peinado completo, Moñitos trenzas ,  entre otras decoraciones.</p>
+                            <div class="service-price">Desde $25</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1552902865-b72f031c5c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Coloración" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title">Coloración</h3>
+                            <p class="service-description">Técnicas avanzadas de coloración para lograr el tono perfecto que realce tu belleza.</p>
+                            <div class="service-price">Desde $50</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1593705114312-a0ee03a3f7c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tratamientos" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title">Tratamientos Capilares</h3>
+                            <p class="service-description">Restaura la salud y vitalidad de tu cabello con nuestros tratamientos especializados.</p>
+                            <div class="service-price">Desde $35</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Peinados" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title">Peinados para Eventos</h3>
+                            <p class="service-description">Crea el look perfecto para tu ocasión especial con nuestros peinados elegantes.</p>
+                            <div class="service-price">Desde $40</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://g.top4top.io/p_3577h407a0.jpg" alt="Extensiones" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title">Extensiones Capilares</h3>
+                            <p class="service-description">Añade longitud y volumen con nuestras extensiones de cabello de alta calidad.</p>
+                            <div class="service-price">Desde $120</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Maquillaje" class="service-img">
+                        <div class="service-content">
+                            <h3 class="service-title">Maquillaje Profesional</h3>
+                            <p class="service-description">Resalta tu belleza natural con técnicas de maquillaje profesional para cualquier ocasión.</p>
+                            <div class="service-price">Desde $45</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section class="section" id="galeria">
+        <div class="container">
+            <h2 class="section-heading">Nuestros Trabajos</h2>
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Trabajo 1">
+                        <div class="slide-content">
+                            <h3>Corte Moderno</h3>
+                            <p>Transformación completa con corte y coloración</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1581403341632-a0d8e7bf2a5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Trabajo 2">
+                        <div class="slide-content">
+                            <h3>Coloración Profesional</h3>
+                            <p>Técnica balayage para un look natural y moderno</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1595475888562-57441d9b298a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Trabajo 3">
+                        <div class="slide-content">
+                            <h3>Peinado para Boda</h3>
+                            <p>Elegante recogido para una ocasión especial</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1593705114312-a0ee03a3f7c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Trabajo 4">
+                        <div class="slide-content">
+                            <h3>Tratamiento Capilar</h3>
+                            <p>Recuperación de cabello dañado con keratina</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://g.top4top.io/p_3577h407a0.jpg" alt="Trabajo 5">
+                        <div class="slide-content">
+                            <h3>Extensiones Naturales</h3>
+                            <p>Añade longitud y volumen con resultados naturales</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-control prev">&#10094;</button>
+                    <button class="carousel-control next">&#10095;</button>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section class="section section-light" id="testimonios">
+        <div class="container">
+            <h2 class="section-heading">Lo que dicen nuestros clientes</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Estoy encantada con mi nuevo look. El equipo de Estilo y Belleza entendió exactamente lo que quería y superó mis expectativas. ¡Recomendado 100%!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://a.top4top.io/p_3577mtf1h0.jpg" alt="Cliente 1" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Irma Isabela </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Llevo años confiando en Estilo y Belleza para todos mis cambios de look. Siempre me asesoran profesionalmente y los resultados son impecables."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://d.top4top.io/p_3577k2f421.jpg" alt="Cliente 2" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Mayda García </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "El mejor salon de belleza que he visitado. El ambiente es acogedor, el personal es amable y los resultados siempre son excelentes. No iría a otro lugar."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://c.top4top.io/p_3577wd6e73.jpg" alt="Cliente 3" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Yolanda Sanchez</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="section" id="contacto">
+        <div class="container">
+            <h2 class="section-heading">Reserva tu cita</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                           <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            
+                            
+                            <div class="contact-details">
+                                <h4>Teléfono</h4>
+                                <p id="phone-number-display2">+53 5620-31-89</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Dirección</h4>
+                                <p>Centro Habana <br> Calle Manrrique #563 / Salud y Dragones</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Horario</h4>
+                                <p>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 16:00<br>Dom: Cerrado</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@estiloybelleza.com</p>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4>Síguenos en redes sociales</h4>
+                        <div class="social-links">
+                        
+                        
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <form id="appointment-form">
+                            <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+                            <select class="form-control" id="service" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="Corte de Cabello">Corte de Cabello</option>
+                                <option value="Coloración">Coloración</option>
+                                <option value="Tratamientos Capilares">Tratamientos Capilares</option>
+                                <option value="Peinados para Eventos">Peinados para Eventos</option>
+                                <option value="Extensiones Capilares">Extensiones Capilares</option>
+                                <option value="Maquillaje Profesional">Maquillaje Profesional</option>
+                            </select>
+                            <input type="date" class="form-control" id="date" required>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Mensaje adicional"></textarea>
+                            <button type="submit" class="btn btn-primary-custom w-100">Solicitar cita por WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo">Estilo y Belleza</div>
+                    <p>Transformamos tu look para realzar tu belleza natural con técnicas profesionales y productos de alta calidad.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Servicios</h5>
+                        <ul>
+                            <li><a href="#servicios">Cortes de Cabello</a></li>
+                            <li><a href="#servicios">Coloración</a></li>
+                            <li><a href="#servicios">Tratamientos</a></li>
+                            <li><a href="#servicios">Peinados</a></li>
+                            <li><a href="#servicios">Extensiones</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Enlaces Rápidos</h5>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#galeria">Galería</a></li>
+                            <li><a href="#testimonios">Testimonios</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Contacto</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Centro Habana <br> Calle Manrrique #563 / Salud y Dragones</li>
+                            <li><i class="fas fa-phone me-2"></i> <span id="phone-number-display3">+53 5620-31-89</span></li>
+                            <li><i class="fas fa-envelope me-2"></i> info@estiloybelleza.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Lun-Vie: 9:00-19:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Estilo y Belleza. Todos los derechos reservados. <br> FG-Studio
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script>
+        // CONFIGURACIÓN - Modifica este número para cambiar el destinatario de WhatsApp
+        const whatsappNumber = "5356203189"; // Solo números, sin símbolos
+        
+        // Script para crear partículas de fondo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Actualizar números de teléfono en toda la página
+            const phoneDisplays = document.querySelectorAll('#phone-number-display, #phone-number-display2, #phone-number-display3');
+            const formattedPhone = formatPhoneNumber(whatsappNumber);
+            phoneDisplays.forEach(display => {
+                display.textContent = formattedPhone;
+            });
+            
+            const particlesContainer = document.getElementById('particles-container');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 15 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición aleatoria
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Opacidad aleatoria
+                const opacity = Math.random() * 0.4 + 0.1;
+                particle.style.opacity = opacity;
+                
+                // Retraso de animación aleatorio
+                const delay = Math.random() * 15;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Carrusel
+            const slides = document.querySelector('.carousel-slides');
+            const slideItems = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const slideCount = slideItems.length;
+            
+            // Función para actualizar el carrusel
+            function updateCarousel() {
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Navegación siguiente
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            });
+            
+            // Navegación anterior
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateCarousel();
+            });
+            
+            // Navegación por indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Autoavance cada 5 segundos
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            }, 5000);
+            
+            // Navegación suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Cerrar el offcanvas en dispositivos móviles
+                        const offcanvas = document.getElementById('offcanvasNavbar');
+                        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                        if (bsOffcanvas) {
+                            bsOffcanvas.hide();
+                        }
+                    }
+                });
+            });
+            
+            // Envío del formulario por WhatsApp
+            document.getElementById('appointment-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obtener datos del formulario
+                const name = document.getElementById('name').value;
+                const service = document.getElementById('service').value;
+                const date = document.getElementById('date').value;
+                const message = document.getElementById('message').value;
+                
+                // Construir mensaje para WhatsApp
+                const whatsappMessage = `Hola, me gustaría solicitar una cita en Estilo y Belleza.%0A%0A` +
+                                       `*Nombre:* ${name}%0A` +
+                                       `*Servicio:* ${service}%0A` +
+                                       `*Fecha deseada:* ${date}%0A` +
+                                       `*Mensaje adicional:* ${message || 'Ninguno'}`;
+                
+                // Crear URL de WhatsApp
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                
+                // Abrir WhatsApp en una nueva ventana
+                window.open(whatsappURL, '_blank');
+                
+                // Limpiar formulario después del envío
+                this.reset();
+                
+                // Mostrar mensaje de confirmación
+                alert('Redirigiendo a WhatsApp para completar la reserva de tu cita.');
+            });
+            
+            // Función para formatear número de teléfono
+            function formatPhoneNumber(phoneNumber) {
+                // Asumiendo formato cubano: +53 5XXX-XX-XX
+                if (phoneNumber.length === 10 && phoneNumber.startsWith('53')) {
+                    return `+${phoneNumber.substring(0,2)} ${phoneNumber.substring(2,6)}-${phoneNumber.substring(6,8)}-${phoneNumber.substring(8)}`;
+                }
+                return `+${phoneNumber}`;
+            }
+        });
+    </script>
+</body>
+</html>
