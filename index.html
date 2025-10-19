@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital | FG-Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta property="og:title" content="FG-Studio - Catálogos Digitales Profesionales">
+    <meta property="og:description" content="Automatice su negocio con nuestros catálogos digitales profesionales">
+    <meta property="og:image" content="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg">
+    <meta property="og:url" content="https://webstudioxz.github.io/Freenlancer">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary-color: #f59e0b;
+            --accent-color: #ec4899;
+            --dark-bg: #111827;
+            --darker-bg: #0f172a;
+            --card-bg: #1e293b;
+            --card-hover: #334155;
+            --light-text: #f8fafc;
+            --medium-text: #cbd5e1;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --box-shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .logo-icon {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--medium-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--light-text);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse 15s infinite linear;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.2);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-text);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Main Banner */
+        .main-banner {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            margin: 2rem 0;
+            box-shadow: var(--box-shadow-lg);
+            animation: zoomIn 1.5s ease-out;
+            transition: var(--transition);
+        }
+        
+        .main-banner:hover {
+            transform: scale(1.01);
+        }
+        
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Button Container */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        /* Button Styles */
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(79, 70, 229, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0.5rem;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .product-card {
+            flex: 0 0 auto;
+            width: 280px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: slideIn 0.8s ease-out;
+            position: relative;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+            background: var(--card-hover);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--light-text);
+            margin: 0;
+            transition: var(--transition);
+        }
+        
+        .product-link {
+            text-decoration: none;
+        }
+        
+        .product-card:hover .product-title {
+            color: var(--secondary-color);
+        }
+        
+        /* Description Section */
+        .description-section {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .description-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(79, 70, 229, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .description-section:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .description-text {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: var(--medium-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Manifesto Section */
+        .manifesto-section {
+            margin: 5rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: var(--border-radius);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .manifesto-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .manifesto-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .manifesto-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .manifesto-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white"><circle cx="50" cy="50" r="2"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin: 5rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-description {
+            color: var(--medium-text);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 4rem 0 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--medium-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-text);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(79, 70, 229, 0.1);
+            filter: blur(40px);
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        .floating-element:nth-child(4) {
+            bottom: 10%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 20px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 40px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, 20px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .description-text {
+                font-size: 1.2rem;
+            }
+            
+            .manifesto-text {
+                font-size: 1.1rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadein {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-cube logo-icon"></i>
+                    FG-Studio
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Inicio</a>
+                    <a href="hacercade.html" class="nav-link">Nosotros</a>
+                    <a href="contactar.html" class="nav-link">Contacto</a>
+                    <a href="#" class="nav-link">Servicios</a>
+                    <a href="#" class="nav-link">Portafolio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge animate-fadein">Catálogos Digitales Profesionales</span>
+            <h1 class="hero-title animate-fadein">Transforme su Negocio con Digitalización</h1>
+            <p class="hero-subtitle animate-fadein">Automatice su negocio para que venda por usted. Cree su catálogo digital y lleve sus productos a cada cliente con más eficiencia, rapidez y seguridad.</p>
+            
+            <div class="main-banner animate-fadein">
+                <img src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg" alt="FG-Studio Banner" class="banner-image">
+            </div>
+            
+            <div class="btn-container animate-fadein">
+                <a href="hacercade.html" class="btn-primary">
+                    <i class="fas fa-info-circle"></i> Conoce Más
+                </a>
+                <a href="contactar.html" class="btn-secondary">
+                    <i class="fas fa-envelope"></i> Contáctanos
+                </a>
+                <a href="#" class="btn-secondary">
+                    <i class="fas fa-map-signs"></i> Indicaciones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header animate-fadein">
+                <h2 class="section-title">Nuestros Catálogos</h2>
+                <p class="section-subtitle">Explore nuestras categorías de productos y servicios disponibles</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <a href="La-Reina.html" class="product-link"> 
+                        <div class="product-card">
+                            <img src="https://d.top4top.io/p_3525b1u9b0.jpg" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Tienda La Reina</h3>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="peluquería.html" class="product-link"> 
+                        <div class="product-card">
+                            <img src="https://l.top4top.io/p_3564rrpn21.jpg" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Estilo y Belleza</h3>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="caja.html" class="product-link"> 
+                        <div class="product-card">
+                            <img src="https://a.top4top.io/p_3550p4e0j0.jpg" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Inventario</h3>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="product-link"> 
+                        <div class="product-card">
+                            <img src="https://l.top4top.io/p_3517fhhys0.jpg" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Regalos</h3>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="product-link"> 
+                        <div class="product-card">
+                            <img src="https://a.top4top.io/p_35179hrcu2.jpg" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Muebles</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description-section animate-fadein">
+        <div class="container">
+            <p class="description-text">
+                <span class="highlight">Automatice su Negocio para que Venda por usted.</span> Visítenos en confianza y navegue seguro por nuestro catálogo Digital.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header animate-fadein">
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <p class="section-subtitle">Ventajas de nuestros catálogos digitales profesionales</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-fadein">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Rápido y Eficiente</h3>
+                    <p class="feature-description">Navegación fluida y experiencia de usuario optimizada para maximizar conversiones.</p>
+                </div>
+                
+                <div class="feature-card animate-fadein">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Completamente Seguro</h3>
+                    <p class="feature-description">Protegemos su información y la de sus clientes con los más altos estándares de seguridad.</p>
+                </div>
+                
+                <div class="feature-card animate-fadein">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Totalmente Responsivo</h3>
+                    <p class="feature-description">Funciona perfectamente en cualquier dispositivo: móvil, tablet o escritorio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section class="manifesto-section animate-fadein">
+        <div class="manifesto-background"></div>
+        <div class="container">
+            <div class="manifesto-content">
+                <h2 class="manifesto-title">Nuestra Promesa</h2>
+                <p class="manifesto-text">FG-Studio: Su mejor opción para automatizar su negocio</p>
+                <p class="manifesto-text">Cree su catálogo digital ya</p>
+                <p class="manifesto-text">Lleve sus productos a cada cliente con más eficiencia, rapidez, fácil, seguro y económico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FG-Studio</h3>
+                    <p>Especialistas en creación de catálogos digitales profesionales que impulsan su negocio hacia el éxito.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="hacercade.html">Sobre Nosotros</a></li>
+                        <li><a href="contactar.html">Contacto</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Catálogos Digitales</a></li>
+                        <li><a href="#">Automatización</a></li>
+                        <li><a href="#">Diseño Web</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Consultoría</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> webstudioxz@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +53 5357-15-69</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ciudad, País</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FG-Studio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script>
+        // Efecto de aparición suave al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadein');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Scroll to top functionality
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
