@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FG-Studio | Soluciones Digitales Profesionales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Variables globales */
+        :root {
+            --color-primary: #2c5aa0;
+            --color-secondary: #1a1a2e;
+            --color-accent: #4cc9f0;
+            --color-dark: #16213e;
+            --color-light: #f8f9fa;
+            --color-text: #333333;
+            --color-text-light: #6c757d;
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --box-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Reset para eliminar márgenes y paddings no deseados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Prevenir reflujo de layout */
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Estilos base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        
+        /* Asegurar que las imágenes no causen reflujo */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Encabezado */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar-scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--color-text);
+            margin: 0 10px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-primary);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            border: none;
+            padding: 10px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1e3d73;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e3d73 100%);
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-hover);
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            object-fit: cover;
+        }
+        
+        /* Secciones de contenido */
+        .section {
+            padding: 80px 0;
+            width: 100%;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            color: var(--color-accent);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .card-text {
+            color: var(--color-text-light);
+        }
+        
+        /* FAQ Section */
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius) !important;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .accordion-item:hover {
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .accordion-button {
+            background-color: white;
+            color: var(--color-secondary);
+            font-weight: 600;
+            padding: 20px;
+            border: none;
+            box-shadow: none;
+            transition: var(--transition);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: white;
+            color: var(--color-primary);
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            color: var(--color-text-light);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, #0f3460 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 60px 0 30px;
+            width: 100%;
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--color-light);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: var(--color-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Botón flotante de WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            z-index: 99;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Animaciones - Optimizadas para prevenir reflujo */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Aplicar animaciones después de la carga */
+        .loaded .hero-title {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .loaded .hero-subtitle {
+            animation: fadeIn 1.2s ease-out;
+        }
+        
+        .loaded .hero-image {
+            animation: fadeIn 1s ease-out, float 6s ease-in-out infinite;
+        }
+        
+        /* Estilos para los modales */
+        .modal-content {
+            border-radius: var(--border-radius);
+            border: none;
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .modal-header {
+            background-color: var(--color-primary);
+            color: white;
+            border-bottom: none;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        .modal-title {
+            font-weight: 600;
+        }
+        
+        .btn-close-white {
+            filter: invert(1);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            border-radius: var(--border-radius);
+            padding: 10px 15px;
+            border: 1px solid #e1e5e9;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .scroll-to-top {
+                left: 20px;
+                bottom: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .floating-whatsapp {
+                right: 20px;
+                bottom: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg" alt="FG-Studio" class="logo-img" width="50" height="50">
+                FG-Studio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary ms-3" id="contactWhatsApp">Contáctanos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Soluciones Digitales para Impulsar tu Negocio</h1>
+                    <p class="hero-subtitle">Diseño web profesional, desarrollo de aplicaciones y estrategias de marketing digital para llevar tu empresa al siguiente nivel.</p>
+                    <div>
+                      <a href="#servicios" class="btn btn-light btn-lg me-3">Descubre Nuestros Servicios</a>
+                       <br> <br> 
+                        <button class="btn btn-primary btn-lg" id="heroWhatsApp">Contáctanos</button> 
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Imagen con dimensiones definidas para prevenir reflujo -->
+                    <img src="https://e.top4top.io/p_3579kphzv0.jpg" alt="Soluciones Digitales" class="hero-image" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="card-title">Diseño Web Profesional</h3>
+                            <p class="card-text">Creamos sitios web modernos, responsivos y optimizados para conversiones que reflejan la identidad de tu marca.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="card-title">Desarrollo de Aplicaciones</h3>
+                            <p class="card-text">Desarrollamos aplicaciones móviles y de escritorio personalizadas para mejorar la experiencia de tus clientes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="card-title">Marketing Digital</h3>
+                            <p class="card-text">Implementamos estrategias de marketing digital efectivas para aumentar tu visibilidad y generar leads cualificados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de Section -->
+    <section class="section bg-light" id="acerca">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Acerca de FG-Studio</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <h3 class="mb-4">Nuestra Misión</h3>
+                    <p class="mb-4">En FG-Studio nos especializamos en transformar ideas en soluciones digitales efectivas. Nuestro equipo de diseñadores y desarrolladores trabaja para crear experiencias digitales que no solo sean visualmente atractivas, sino también funcionales y orientadas a resultados.</p>
+                    <p>Entendemos que en el entorno digital actual, tener una presencia online profesional es fundamental para el crecimiento de cualquier negocio. Por eso, nos enfocamos en desarrollar soluciones que se adapten a las necesidades específicas de cada cliente.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Nuestro Enfoque</h3>
+                    <div class="mb-4">
+                        <h5 class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Diseño Centrado en el Usuario</h5>
+                        <p class="ms-4">Creamos interfaces intuitivas que mejoran la experiencia del usuario y aumentan las conversiones.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Desarrollo de Calidad</h5>
+                        <p class="ms-4">Utilizamos las mejores prácticas y tecnologías modernas para garantizar productos robustos y escalables.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Estrategias Personalizadas</h5>
+                        <p class="ms-4">Desarrollamos estrategias a medida que se alinean con los objetivos específicos de tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Qué es una página web y por qué mi negocio necesita una?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Una página web es un documento electrónico accesible a través de internet que contiene información organizada sobre un tema específico. En el contexto empresarial, funciona como tu carta de presentación digital, permitiendo a los clientes potenciales conocer tus productos o servicios en cualquier momento y desde cualquier lugar. Hoy en día, contar con un sitio web profesional es fundamental para establecer credibilidad, ampliar tu alcance y competir efectivamente en el mercado.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Qué es un subdominio y cuándo debería considerar usar uno?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Un subdominio es una extensión de tu dominio principal que te permite crear secciones específicas de tu sitio web con contenido especializado. Por ejemplo, "tienda.midominio.com" o "blog.midominio.com". Los subdominios son útiles cuando deseas separar funcionalidades específicas de tu sitio principal, como una tienda online, un blog corporativo o un portal para clientes. Esto ayuda a organizar mejor tu contenido y mejorar la experiencia de usuario.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Qué ventajas ofrece trabajar con freelancers frente a una agencia tradicional?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Trabajar con freelancers profesionales como nuestro equipo en FG-Studio ofrece varias ventajas: mayor flexibilidad, comunicación directa sin intermediarios, costos más competitivos y un enfoque más personalizado en tu proyecto. Además, al ser especialistas en áreas específicas, podemos ofrecer soluciones más innovadoras y actualizadas con las últimas tendencias tecnológicas, asegurando que tu proyecto reciba la atención y expertise que merece.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NUEVAS PREGUNTAS AÑADIDAS -->
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            ¿Qué es un sistema de ventas automatizado, por qué deberíamos usarlos en nuestro negocio y qué beneficios tiene?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Un sistema de ventas automatizado es una solución tecnológica que permite gestionar y optimizar todo el proceso de ventas de forma eficiente y con mínima intervención manual. Deberías implementarlo en tu negocio porque:
+                            <ul>
+                                <li><strong>Aumenta la productividad:</strong> Automatiza tareas repetitivas como seguimiento de leads, facturación y reportes.</li>
+                                <li><strong>Mejora la experiencia del cliente:</strong> Permite respuestas más rápidas y personalizadas.</li>
+                                <li><strong>Optimiza la gestión de inventario:</strong> Control en tiempo real de stock y alertas automáticas.</li>
+                                <li><strong>Genera insights valiosos:</strong> Reportes automáticos que ayudan en la toma de decisiones.</li>
+                                <li><strong>Reduce errores humanos:</strong> Minimiza equivocaciones en facturación y registro de datos.</li>
+                            </ul>
+                            Los beneficios incluyen mayor eficiencia operativa, mejor servicio al cliente, reducción de costos y crecimiento escalable del negocio.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            ¿Cuál es la ventaja de usar un sistema automatizado de ventas e inventario en un teléfono móvil?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Utilizar un sistema automatizado de ventas e inventario en un teléfono móvil ofrece importantes ventajas competitivas:
+                            <ul>
+                                <li><strong>Más seguro:</strong> Los dispositivos móviles modernos cuentan con medidas de seguridad avanzadas como huella dactilar, reconocimiento facial y encriptación de datos, protegiendo la información sensible de tu negocio.</li>
+                                <li><strong>Fácil de usar:</strong> Las interfaces móviles están diseñadas para ser intuitivas, reduciendo la curva de aprendizaje y facilitando la adopción por parte del equipo.</li>
+                                <li><strong>Manipulable:</strong> La portabilidad permite gestionar ventas e inventario desde cualquier lugar, sin estar atado a un punto fijo, ideal para negocios con movilidad o múltiples ubicaciones.</li>
+                                <li><strong>Económico:</strong> Es más accesible que equipos especializados, con menores costos de mantenimiento y actualización, además de eliminar la necesidad de infraestructura adicional.</li>
+                            </ul>
+                            Esta solución permite una gestión empresarial ágil, moderna y adaptada a las necesidades actuales del mercado.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            ¿Por qué deberías usar el sistema de caja en un teléfono móvil o tablet y no en una PC ordinaria?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Optar por un sistema de caja en dispositivos móviles frente a una PC tradicional ofrece ventajas significativas:
+                            <ul>
+                                <li><strong>Movilidad total:</strong> Puedes atender clientes en cualquier punto de venta sin limitaciones físicas, ideal para negocios con atención en diferentes áreas.</li>
+                                <li><strong>Menor inversión inicial:</strong> Los dispositivos móviles son considerablemente más económicos que una PC completa con todos sus periféricos.</li>
+                                <li><strong>Actualizaciones instantáneas:</strong> Las aplicaciones móviles se actualizan automáticamente, asegurando que siempre tengas la última versión sin intervención manual.</li>
+                                <li><strong>Integración nativa:</strong> Aprovecha funciones del dispositivo como cámara para escanear códigos, GPS para geolocalización y conectividad para impresión inalámbrica.</li>
+                                <li><strong>Menor consumo energético:</strong> Reduces costos de electricidad y puedes operar incluso durante cortes de energía usando la batería del dispositivo.</li>
+                                <li><strong>Espacio optimizado:</strong> Ocupa menos espacio físico, importante para establecimientos con áreas reducidas.</li>
+                            </ul>
+                            Esta solución representa la evolución natural de los puntos de venta, adaptándose a las necesidades de negocios modernos y dinámicos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <h2 class="cta-title" data-aos="fade-up">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">Contáctanos hoy mismo para una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.</p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <button class="btn btn-light btn-lg me-3" data-bs-toggle="modal" data-bs-target="#emailModal">Enviar Correo</button>
+              <br>
+              <br>
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#whatsappModal">Solicitar Consulta</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up">
+                    <h4 class="footer-title">FG-Studio</h4>
+                    <p>Especialistas en soluciones digitales profesionales. Transformamos ideas en experiencias digitales exitosas.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#acerca">Acerca de</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Diseño Web</a></li>
+                        <li><a href="#">Desarrollo de Apps</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Consultoría</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope me-2"></i> webstudioxz@gmail.com </li>
+                        <li><i class="fas fa-phone me-2"></i> +53 5357-15-69</li>
+                        <li><i class="fab fa-whatsapp me-2"></i> <a href="#" id="footerWhatsApp">WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Centro Habana  Manrrique #563 / Salud y Dragones </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FG-Studio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para Enviar Correo -->
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">Enviar Correo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="emailForm">
+                        <div class="mb-3">
+                            <label for="nombreEmail" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoEmail" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefonoEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccionEmail" class="form-label">Dirección o Lugar</label>
+                            <input type="text" class="form-control" id="direccionEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionEmail" class="form-label">Servicio que deseas realizar</label>
+                            <textarea class="form-control" id="descripcionEmail" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enlaceEmail" class="form-label">Enlace (opcional)</label>
+                            <input type="url" class="form-control" id="enlaceEmail">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="enviarCorreoBtn">Enviar Correo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Solicitar Consulta por WhatsApp -->
+    <div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whatsappModalLabel">Solicitar Consulta por WhatsApp</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="whatsappForm">
+                        <div class="mb-3">
+                            <label for="nombreWhatsApp" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreWhatsApp" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoWhatsApp" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefonoWhatsApp" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccionWhatsApp" class="form-label">Dirección o Lugar</label>
+                            <input type="text" class="form-control" id="direccionWhatsApp" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionWhatsApp" class="form-label">Servicio que deseas realizar</label>
+                            <textarea class="form-control" id="descripcionWhatsApp" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enlaceWhatsApp" class="form-label">Enlace (opcional)</label>
+                            <input type="url" class="form-control" id="enlaceWhatsApp">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-whatsapp" id="enviarWhatsAppBtn">
+                        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <div class="floating-whatsapp" id="floatingWhatsApp">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Configuración de WhatsApp - Cambia estos valores según tus necesidades
+        const whatsappConfig = {
+            phoneNumber: "5353571569", // Reemplaza con tu número de WhatsApp (sin el +)
+            defaultMessage: "Hola, estoy interesado en los servicios de FG-Studio. Me gustaría obtener más información." // Mensaje predeterminado
+        };
+
+        // Configuración de correo - Cambia este valor por tu dirección de correo
+        const emailConfig = {
+            emailAddress: "webstudioxz@gmail.com" // Reemplaza con tu dirección de correo
+        };
+
+        // Función para abrir WhatsApp
+        function openWhatsApp(message = whatsappConfig.defaultMessage) {
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappConfig.phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Función para enviar correo
+        function sendEmail(formData) {
+            const { nombre, telefono, direccion, descripcion, enlace } = formData;
+            
+            const subject = `Consulta de ${nombre} - FG-Studio`;
+            let body = `Nombre: ${nombre}\n`;
+            body += `Teléfono: ${telefono}\n`;
+            body += `Dirección/Lugar: ${direccion}\n`;
+            body += `Servicio deseado: ${descripcion}\n`;
+            if (enlace) {
+                body += `Enlace: ${enlace}\n`;
+            }
+            
+            const mailtoUrl = `mailto:${emailConfig.emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        }
+
+        // Prevenir el reflujo de layout: esperar a que todo cargue antes de aplicar animaciones
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar la página como cargada para aplicar animaciones
+            document.body.classList.add('loaded');
+            
+            // Inicializar AOS (Animate On Scroll) después de la carga
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+
+                // Show/hide scroll to top button
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.classList.add('active');
+                } else {
+                    scrollToTopBtn.classList.remove('active');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll to top functionality
+            document.getElementById('scrollToTop').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Eventos para abrir WhatsApp
+            document.getElementById('contactWhatsApp').addEventListener('click', function() {
+                openWhatsApp();
+            });
+
+            document.getElementById('heroWhatsApp').addEventListener('click', function() {
+                openWhatsApp();
+            });
+
+            document.getElementById('footerWhatsApp').addEventListener('click', function(e) {
+                e.preventDefault();
+                openWhatsApp();
+            });
+
+            document.getElementById('floatingWhatsApp').addEventListener('click', function() {
+                openWhatsApp();
+            });
+
+            // Evento para enviar correo desde el modal
+            document.getElementById('enviarCorreoBtn').addEventListener('click', function() {
+                const nombre = document.getElementById('nombreEmail').value;
+                const telefono = document.getElementById('telefonoEmail').value;
+                const direccion = document.getElementById('direccionEmail').value;
+                const descripcion = document.getElementById('descripcionEmail').value;
+                const enlace = document.getElementById('enlaceEmail').value;
+                
+                if (nombre && telefono && direccion && descripcion) {
+                    sendEmail({ nombre, telefono, direccion, descripcion, enlace });
+                    
+                    // Cerrar el modal
+                    const emailModal = bootstrap.Modal.getInstance(document.getElementById('emailModal'));
+                    emailModal.hide();
+                    
+                    // Limpiar el formulario
+                    document.getElementById('emailForm').reset();
+                } else {
+                    alert('Por favor, completa todos los campos obligatorios.');
+                }
+            });
+
+            // Evento para enviar por WhatsApp desde el modal
+            document.getElementById('enviarWhatsAppBtn').addEventListener('click', function() {
+                const nombre = document.getElementById('nombreWhatsApp').value;
+                const telefono = document.getElementById('telefonoWhatsApp').value;
+                const direccion = document.getElementById('direccionWhatsApp').value;
+                const descripcion = document.getElementById('descripcionWhatsApp').value;
+                const enlace = document.getElementById('enlaceWhatsApp').value;
+                
+                if (nombre && telefono && direccion && descripcion) {
+                    let message = `Hola, me gustaría solicitar una consulta sobre sus servicios.\n\n`;
+                    message += `*Nombre:* ${nombre}\n`;
+                    message += `*Teléfono:* ${telefono}\n`;
+                    message += `*Dirección/Lugar:* ${direccion}\n`;
+                    message += `*Servicio deseado:* ${descripcion}\n`;
+                    if (enlace) {
+                        message += `*Enlace:* ${enlace}\n`;
+                    }
+                    
+                    openWhatsApp(message);
+                    
+                    // Cerrar el modal
+                    const whatsappModal = bootstrap.Modal.getInstance(document.getElementById('whatsappModal'));
+                    whatsappModal.hide();
+                    
+                    // Limpiar el formulario
+                    document.getElementById('whatsappForm').reset();
+                } else {
+                    alert('Por favor, completa todos los campos obligatorios.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

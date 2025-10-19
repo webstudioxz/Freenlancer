@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco García - Desarrollador Web Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #1a252f;
+            --transition-speed: 0.4s;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #0a0a2a 0%, #000000 100%);
+            color: var(--light-color);
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode .card {
+            background: rgba(26, 37, 47, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all var(--transition-speed) ease;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .dark-mode h1 {
+            color: var(--light-color);
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #555;
+        }
+
+        .dark-mode .description {
+            color: #ccc;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: color var(--transition-speed) ease;
+        }
+
+        .dark-mode label {
+            color: var(--light-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all var(--transition-speed) ease;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .dark-mode .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #34495e;
+            color: var(--light-color);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #e1e8ed;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .dark-mode .progress-container {
+            background: #34495e;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success:hover {
+            background: #219653;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 1.2rem;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+        }
+
+        .validation-message {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .validation-message.show {
+            opacity: 1;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(52, 152, 219, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .success-animation {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .success-animation i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .title {
+                font-size: 1.3rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements" id="floating-elements"></div>
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <div class="card fade-in">
+            <div class="header">
+                <img src="https://e.top4top.io/p_3526yyszp0.jpg" alt="Francisco García" class="profile-img fade-in">
+                <h1 class="fade-in delay-1">Francisco García</h1>
+                <p class="title fade-in delay-1">Desarrollador Web Freelance</p>
+                <p class="description fade-in delay-2">Transformo ideas en experiencias digitales atractivas y funcionales. Llevemos tu negocio al siguiente nivel con una presencia web profesional que conecte con tus clientes.</p>
+                
+                <div class="social-links fade-in delay-3">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="progress-container fade-in delay-2">
+                <div class="progress-bar" id="form-progress"></div>
+            </div>
+
+            <form id="contact-form" action="https://formspree.io/f/mgvobknl" method="POST" class="form-container">
+                <div class="form-group fade-in delay-1">
+                    <label for="name">Nombre y Apellido</label>
+                    <input type="text" id="name" name="producto91" class="form-control" placeholder="Ingresa tu nombre completo" required>
+                    <span class="validation-message" id="name-validation"></span>
+                </div>
+
+                <div class="form-group fade-in delay-2">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="CORREO" class="form-control" placeholder="ejemplo@dominio.com" required>
+                    <span class="validation-message" id="email-validation"></span>
+                </div>
+
+                <div class="form-group fade-in delay-3">
+                    <label for="message">Mensaje o Consulta</label>
+                    <textarea id="message" name="producto92" class="form-control" placeholder="Describe tu proyecto o consulta..." required></textarea>
+                    <span class="validation-message" id="message-validation"></span>
+                </div>
+
+                <div class="button-group fade-in delay-3">
+                    <button type="button" class="btn btn-success" id="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="email-btn">
+                        <i class="fas fa-envelope"></i> Enviar por Email
+                    </button>
+                </div>
+
+                <div class="success-animation" id="success-animation">
+                    <i class="fas fa-check-circle"></i>
+                    <p>¡Mensaje enviado con éxito!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Crear elementos flotantes de fondo
+        function createFloatingElements() {
+            const container = document.getElementById('floating-elements');
+            const count = 15;
+            
+            for (let i = 0; i < count; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 100 + 20;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                
+                // Retraso de animación aleatorio
+                element.style.animationDelay = `${Math.random() * 20}s`;
+                
+                // Duración aleatoria
+                const duration = Math.random() * 20 + 20;
+                element.style.animationDuration = `${duration}s`;
+                
+                // Opacidad aleatoria
+                element.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                container.appendChild(element);
+            }
+        }
+
+        // Cambiar tema claro/oscuro
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                themeToggle.style.background = '#3498db';
+            } else {
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                themeToggle.style.background = '#f39c12';
+            }
+        }
+
+        // Validar formulario
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            
+            // Validar nombre
+            if (name.value.trim().length < 3) {
+                document.getElementById('name-validation').textContent = 'El nombre debe tener al menos 3 caracteres';
+                document.getElementById('name-validation').classList.add('show');
+                name.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                document.getElementById('name-validation').classList.remove('show');
+                name.style.borderColor = '';
+            }
+            
+            // Validar email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+                document.getElementById('email-validation').textContent = 'Por favor ingresa un email válido';
+                document.getElementById('email-validation').classList.add('show');
+                email.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                document.getElementById('email-validation').classList.remove('show');
+                email.style.borderColor = '';
+            }
+            
+            // Validar mensaje
+            if (message.value.trim().length < 10) {
+                document.getElementById('message-validation').textContent = 'El mensaje debe tener al menos 10 caracteres';
+                document.getElementById('message-validation').classList.add('show');
+                message.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                document.getElementById('message-validation').classList.remove('show');
+                message.style.borderColor = '';
+            }
+            
+            return isValid;
+        }
+
+        // Actualizar barra de progreso
+        function updateProgressBar() {
+            const inputs = [
+                document.getElementById('name'),
+                document.getElementById('email'),
+                document.getElementById('message')
+            ];
+            
+            let filledCount = 0;
+            inputs.forEach(input => {
+                if (input.value.trim() !== '') {
+                    filledCount++;
+                }
+            });
+            
+            const progress = (filledCount / inputs.length) * 100;
+            document.getElementById('form-progress').style.width = `${progress}%`;
+        }
+
+        // Enviar por WhatsApp
+        function sendWhatsApp() {
+            if (!validateForm()) {
+                // Efecto de vibración en los botones
+                const buttons = document.querySelectorAll('.btn');
+                buttons.forEach(button => {
+                    button.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        button.style.animation = '';
+                    }, 500);
+                });
+                return;
+            }
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `https://api.whatsapp.com/send?phone=+5353571569&text=
+*╭─────•◈•─────╮*   
+*FORMULARIO DE CONTACTO*                                                                       
+*Nombre*: ${name}%0A
+*Correo*: ${email}%0A                                                                                                                                   
+*Mensaje*: ${message}%0A
+*╰─────•◈•─────╯*%0A
+*╭─────•◈•─────╮*   
+                                                                                         *En breve serás atendido. ¡Gracias por contactarme!*                                           
+*╰─────•◈•─────╯*`;
+            
+            // Mostrar animación de éxito
+            showSuccessAnimation();
+            
+            // Abrir WhatsApp en nueva pestaña
+            window.open(whatsappMessage, '_blank');
+        }
+
+        // Mostrar animación de éxito
+        function showSuccessAnimation() {
+            const successAnimation = document.getElementById('success-animation');
+            successAnimation.style.display = 'block';
+            
+            setTimeout(() => {
+                successAnimation.style.display = 'none';
+            }, 3000);
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingElements();
+            
+            // Configurar evento para el botón de tema
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            
+            // Configurar evento para el botón de WhatsApp
+            document.getElementById('whatsapp-btn').addEventListener('click', sendWhatsApp);
+            
+            // Configurar eventos para actualizar la barra de progreso
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgressBar);
+            });
+            
+            // Configurar envío del formulario por email
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                if (!validateForm()) {
+                    e.preventDefault();
+                    return;
+                }
+                
+                // Mostrar animación de éxito
+                showSuccessAnimation();
+                
+                // El formulario se enviará normalmente a Formspree
+                // Podrías agregar aquí una animación de carga si lo deseas
+                const submitBtn = document.getElementById('email-btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+            
+            // Agregar estilo para la animación de shake
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0% { transform: translateX(0); }
+                    20% { transform: translateX(-10px); }
+                    40% { transform: translateX(10px); }
+                    60% { transform: translateX(-10px); }
+                    80% { transform: translateX(10px); }
+                    100% { transform: translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
