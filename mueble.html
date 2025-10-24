@@ -1,0 +1,1936 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles Elegantes - Tu hogar, tu estilo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables y estilos base */
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --light-color: #F5F5DC;
+            --dark-color: #3E2723;
+            --text-color: #333;
+            --white: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --professional-bg: #f8f9fa;
+        } 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1px;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        . logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        . logo i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+
+       
+      . logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .FG-Studio1 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1px;
+            
+        }
+        
+        .FG-Studio1:hover {
+            transform: rotate(10deg);
+        }
+        
+
+        .Mensaje_Corrediso {
+color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+            color: black;
+            font-size: 2.3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+
+
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        . mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://c.top4top.io/p_35793w5gm0.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sección de Categorías */
+        .categories {
+            padding: 80px 0;
+            background-color: #F5F5DC; var(--professional-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Carrusel de Categorías */
+        .categories-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 0 40px;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            flex: 0 0 calc(25% - 30px);
+            margin: 0 15px;
+            min-width: 250px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .carousel-btn.prev {
+            left: 0;
+        }
+
+        .carousel-btn.next {
+            right: 0;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Sección de Productos */
+        .products {
+            padding: 80px 0;
+            background-color: #F5F5DC;var(--professional-bg);
+        }
+
+        .products-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .quick-view {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quick-view:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Carrito de Compras */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .quantity-btn {
+            background: none;
+            border: 1px solid #ddd;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 40px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkout-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Modal de Producto */
+        .product-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1200;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-img {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .modal-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .modal-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Modal de Cliente */
+        .customer-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1300;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .customer-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .customer-modal-content {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .customer-modal-content h2 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .category-card {
+                flex: 0 0 calc(33.333% - 30px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .modal-content {
+                flex-direction: column;
+                max-height: 95vh;
+            }
+            
+            .modal-img {
+                height: 300px;
+            }
+            
+            .category-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .category-card {
+                flex: 0 0 calc(100% - 30px);
+            }
+            
+            .categories-carousel {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .products-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                margin: 5px 0;
+                width: 200px;
+            }
+            
+            .carousel-btn {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                   
+            <a class="navbar-brand" href="index.html">
+                <img src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg" alt="FG-Studio" class="FG-Studio1" width="50" height="50"> </a>
+                    
+            <marquee behavior="scroll" direction="left">
+                <font class="Mensaje_Corrediso">TIENDA DIGITAL DE MUEBLES - COMPRA CON SEGURIDAD, RAPIDEZ Y GARANTÍA</font>
+            </marquee>
+                
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#categories">Categorías</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Transforma tu hogar con FG-Studio</h2>
+                <p>Descubre nuestra exclusiva colección de muebles, camas, colchones y juegos de sala diseñados para brindarte comodidad y elegancia.</p>
+                <a href="#products" class="btn">Ver Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías CARRUCEL -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Categorías</h2>
+            </div>
+            <div class="categories-carousel">
+                <button class="carousel-btn prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="https://c.top4top.io/p_35793w5gm0.jpg" alt="Juegos de Sala">
+                        </div>
+                        <div class="category-info">
+                            <h3>Juegos de Sala</h3>
+                            <p>Descanso y confort para sus familiares</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="https://d.top4top.io/p_3581towdg0.jpg" alt="Camas">
+                        </div>
+                        <div class="category-info">
+                            <h3>Camas</h3>
+                            <p>La mejor calidad para tu descanso</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="https://h.top4top.io/p_3579ee9du0.jpg" alt="Muebles">
+                        </div>
+                        <div class="category-info">
+                            <h3>Muebles</h3>
+                            <p>Elegancia y confort para tu hogar</p>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="https://h.top4top.io/p_3581cyyd70.jpg" alt="Colchones ">
+                        </div>
+                        <div class="category-info">
+                            <h3>Colchones </h3>
+                            <p>Para descansar cómodamente, justo a tus necesidades </p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="https://d.top4top.io/p_35828udek3.jpg" alt="Juego de Comedor">
+                        </div>
+                        <div class="category-info">
+                            <h3>Juego de Comedor</h3>
+                            <p>Diseño y comodidad , exclusivo espesificamente para su comedor</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Los puntos se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Productos Destacados</h2>
+            </div>
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="camas">Camas</button>
+                <button class="filter-btn" data-filter="colchones">Colchones</button>
+                <button class="filter-btn" data-filter="sala">Juegos de Sala</button>
+                <button class="filter-btn" data-filter="muebles">Muebles</button>
+  <button class="filter-btn" data-filter="Juego de Comedor">Juego de Comedor</button>
+                
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito de Compras -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Los productos del carrito se cargarán aquí -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+    </div>
+
+    <!-- Modal de Producto -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-img">
+                <img id="modalImage" src="" alt="Producto">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle">Nombre del Producto</h2>
+                <div class="modal-price" id="modalPrice">$0.00</div>
+                <p class="modal-description" id="modalDescription">Descripción del producto.</p>
+                <div class="modal-actions">
+                    <button class="btn add-to-cart-modal" id="addToCartModal">
+                        <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Datos del Cliente -->
+    <div class="customer-modal" id="customerModal">
+        <div class="customer-modal-content">
+            <button class="close-modal" id="closeCustomerModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Datos del Cliente</h2>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="customerName">Nombre completo</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Teléfono</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerCI">Número de CI</label>
+                    <input type="text" id="customerCI" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Dirección</label>
+                    <input type="text" id="customerAddress" required>
+                </div>
+                <button type="submit" class="btn">Enviar Pedido por WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Muebles Elegantes</h3>
+                    <p>Transformamos tus espacios con muebles de calidad, diseño y confort. Hacemos de tu hogar un lugar especial.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#categories">Categorías</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Centro Habana </li>
+                        <li><i class="fas fa-phone"></i> +53 5357-15-69 </li>
+                        <li><i class="fas fa-envelope"></i> webstudioxz@gmail.com </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025.Muebles Elegantes. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos de productos con información de dueños
+        const products = [
+            {
+                //CAMA
+                id: 1,
+                name: "Cama Tapizada",
+                category: "camas",
+                price: 1200,
+                image: "https://d.top4top.io/p_3581towdg0.jpg",
+                description: "Elegante cama king size fabricada en madera de roble. Incluye cabecera tapizada y base con cajones de almacenamiento.",
+                owner: "+5353571569" // Número del dueño para productos de camas
+            },
+            
+            
+             //CAMA
+            {
+                id: 2,
+                name: "Cama Queen Size con Luces LED",
+                category: "camas",
+                price: 1100,
+                image: "https://d.top4top.io/p_35818yr7k1.jpg",
+                description: "Cama queen size con cabecera acolchada e iluminación LED integrada. Base con cajones de almacenamiento.",
+                owner: "+5353571569" // Mismo dueño que otras camas
+            },
+            
+            //CAMA
+            {
+                id: 3,
+                name: "Cama Queen Size con Luces LED",
+                category: "camas",
+                price: 1100,
+                image: "https://c.top4top.io/p_3581iof2v0.jpg",
+                description: "Cama queen size con cabecera acolchada e iluminación LED integrada. Base con cajones de almacenamiento.",
+                owner: "+5353571569" // Mismo dueño que otras camas
+            },
+            
+            
+            
+            
+            
+            
+            //CONCOLCHONES 
+            {
+                id: 4,
+                name: "Colchón  ",
+                category: "colchones",
+                price: 800,
+                image: "https://h.top4top.io/p_3581cyyd70.jpg",
+                description: "Colchón de espuma viscoelástica que se adapta a la forma de tu cuerpo. Tecnología de refrigeración para un sueño fresco.",
+                owner: "+5353063461" // Número del dueño para productos de colchones
+            },
+            
+
+            
+            {
+                //JUEGO DE SALA
+                id: 6,
+                name: "Juego de Sala Moderno 3 Piezas",
+                category: "sala",
+                price: 1500,
+                image: "https://c.top4top.io/p_35793w5gm0.jpg",
+                description: "Moderno juego de sala de 3 piezas en tela resistente. Incluye sofá de 3 plazas, loveseat y sillón individual.",
+                owner: "+5353571569" // Número del dueño para productos de sala
+            },
+            
+            {
+                id: 7,
+                name: "Juego de Sala Clásico 5 Piezas",
+                category: "sala",
+                price: 2200,
+                image: "https://j.top4top.io/p_357919udf2.jpg",
+                description: "Elegante juego de sala clásico de 5 piezas en cuero genuino. Incluye sofá, dos sillones y dos mesas auxiliares.",
+                owner: "+5353571569" // Mismo dueño que otros juegos de sala
+            },
+
+
+          {
+                id: 8,
+                name: "Juego de Sala Clásico 5 Piezas",
+                category: "sala",
+                price: 2200,
+                image: "https://i.top4top.io/p_3579bph6h1.jpg",
+                description: "Elegante juego de sala clásico de 5 piezas en cuero genuino. Incluye sofá, dos sillones y dos mesas auxiliares.",
+                owner: "+5353571569" // Mismo dueño que otros juegos de sala
+            },
+            
+               {
+                id: 9,
+                name: "Juego de Sala Clásico 5 Piezas",
+                category: "sala",
+                price: 2200,
+                image: "https://d.top4top.io/p_3579kknsw1.jpg",
+                description: "Elegante juego de sala clásico de 5 piezas en cuero genuino. Incluye sofá, dos sillones y dos mesas auxiliares.",
+                owner: "+5353571569" // Mismo dueño que otros juegos de sala
+            },
+            
+
+            
+            
+            {
+                id: 10,
+                name: "Mesa de Centro Roble Natural",
+                category: "muebles",
+                price: 450,
+                image: "https://h.top4top.io/p_3579ee9du0.jpg",
+                description: "Hermosa mesa de centro de roble natural con acabado protector. Diseño moderno con almacenamiento incorporado.",
+                owner: "+5353571569" // Número del dueño para productos de muebles
+            },
+            
+            
+            {
+                id: 11,
+                name: "Doble Balanse",
+                category: "muebles",
+                price: 600,
+                image: "https://k.top4top.io/p_3579r49kz3.jpg",
+                description: "Para meterse en comodidad, leer un buen libro o tomar un café exquisito.",
+                owner: "+5353571569" // Mismo dueño que otros muebles
+            },
+            
+           {
+                id: 12,
+                name: "Doble Balanse",
+                category: "muebles",
+                price: 600,
+                image: "https://h.top4top.io/p_3582u7xfx0.jpg",
+                description: "Para meterse en comodidad, leer un buen libro o tomar un café exquisito.",
+                owner: "+5353571569" // Mismo dueño que otros muebles
+            },
+            
+           {
+                id: 13,
+                name: " ",
+                category: "Juego de Comedor",
+                price: 600,
+                image: "https://c.top4top.io/p_3582ov8r42.jpg",
+                description: "Para meterse en comodidad, leer un buen libro o tomar un café exquisito.",
+                owner: "+5353571569" // Mismo dueño que otros muebles
+            },
+            
+           {
+                id: 14,
+                name: "  ",
+                category: "Juego de Comedor",
+                price: 600,
+                image: "https://d.top4top.io/p_35828udek3.jpg",
+                description: "Para meterse en comodidad, leer un buen libro o tomar un café exquisito.",
+                owner: "+5353571569" // Mismo dueño que otros muebles
+            },
+            
+           {
+                id: 15,
+                name: "  ",
+                category: "Juego de Comedor",
+                price: 600,
+                image: "https://b.top4top.io/p_35823hb5i1.jpg",
+                description: "Para meterse en comodidad, leer un buen libro o tomar un café exquisito.",
+                owner: "+5353571569" // Mismo dueño que otros muebles
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        ];
+
+        // Variables globales
+        let cart = [];
+        let currentProduct = null;
+        let currentSlide = 0;
+        let slidesPerView = 4;
+        let autoSlideInterval;
+
+        // Elementos del DOM
+        const productsGrid = document.getElementById('productsGrid');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const productModal = document.getElementById('productModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDescription = document.getElementById('modalDescription');
+        const addToCartModal = document.getElementById('addToCartModal');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cartCount = document.querySelector('.cart-count');
+        const carouselContainer = document.getElementById('carouselContainer');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const carouselDots = document.getElementById('carouselDots');
+        const categoriesCarousel = document.querySelector('.categories-carousel');
+        const customerModal = document.getElementById('customerModal');
+        const closeCustomerModal = document.getElementById('closeCustomerModal');
+        const customerForm = document.getElementById('customerForm');
+
+        // Información del vendedor (configurada internamente)
+        const sellerInfo = {
+            name: "Francisco García Sánchez",
+            phone: "+53 5357-15-69",
+            address: "Manrrique #563 / Salud y Dragones"
+        };
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts('all');
+            setupEventListeners();
+            initCarousel();
+            updateSlidesPerView();
+            startAutoSlide();
+        });
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            cartIcon.addEventListener('click', toggleCart);
+            closeCart.addEventListener('click', toggleCart);
+            checkoutBtn.addEventListener('click', checkout);
+            closeModal.addEventListener('click', closeProductModal);
+            addToCartModal.addEventListener('click', addToCartFromModal);
+            
+            // Filtros de productos
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover clase active de todos los botones
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    btn.classList.add('active');
+                    // Filtrar productos
+                    renderProducts(btn.dataset.filter);
+                });
+            });
+            
+            // Cerrar modal al hacer clic fuera
+            productModal.addEventListener('click', (e) => {
+                if (e.target === productModal) {
+                    closeProductModal();
+                }
+            });
+            
+            // Cerrar carrito al hacer clic fuera
+            cartModal.addEventListener('click', (e) => {
+                if (e.target === cartModal) {
+                    toggleCart();
+                }
+            });
+            
+            // Event listeners para el carrusel
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+            
+            // Pausar el carrusel automático cuando el ratón está sobre el carrusel
+            categoriesCarousel.addEventListener('mouseenter', stopAutoSlide);
+            categoriesCarousel.addEventListener('mouseleave', startAutoSlide);
+            
+            // Actualizar slides por vista al cambiar el tamaño de la ventana
+            window.addEventListener('resize', () => {
+                updateSlidesPerView();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+            
+            // Event listeners para el modal del cliente
+            closeCustomerModal.addEventListener('click', closeCustomerModalFunc);
+            customerForm.addEventListener('submit', submitCustomerForm);
+        }
+
+        // Inicializar carrusel
+        function initCarousel() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const totalSlides = categoryCards.length;
+            
+            // Crear puntos de navegación
+            for (let i = 0; i < Math.ceil(totalSlides / slidesPerView); i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    goToSlide(i);
+                    startAutoSlide();
+                });
+                carouselDots.appendChild(dot);
+            }
+            
+            updateCarousel();
+        }
+
+        // Actualizar carrusel según el slide actual
+        function updateCarousel() {
+            const translateX = -currentSlide * (100 / slidesPerView);
+            carouselContainer.style.transform = `translateX(${translateX}%)`;
+            
+            // Actualizar puntos activos
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Ir al slide anterior
+        function prevSlide() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const totalSlides = categoryCards.length;
+            const maxSlide = Math.ceil(totalSlides / slidesPerView) - 1;
+            
+            currentSlide = currentSlide > 0 ? currentSlide - 1 : maxSlide;
+            updateCarousel();
+        }
+
+        // Ir al siguiente slide
+        function nextSlide() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const totalSlides = categoryCards.length;
+            const maxSlide = Math.ceil(totalSlides / slidesPerView) - 1;
+            
+            currentSlide = currentSlide < maxSlide ? currentSlide + 1 : 0;
+            updateCarousel();
+        }
+
+        // Ir a un slide específico
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Actualizar slides por vista según el ancho de la pantalla
+        function updateSlidesPerView() {
+            if (window.innerWidth < 576) {
+                slidesPerView = 1;
+            } else if (window.innerWidth < 768) {
+                slidesPerView = 1;
+            } else if (window.innerWidth < 992) {
+                slidesPerView = 2;
+            } else if (window.innerWidth < 1200) {
+                slidesPerView = 3;
+            } else {
+                slidesPerView = 4;
+            }
+            
+            // Recalcular y actualizar carrusel
+            const categoryCards = document.querySelectorAll('.category-card');
+            const totalSlides = categoryCards.length;
+            
+            // Ajustar currentSlide si es necesario
+            const maxSlide = Math.ceil(totalSlides / slidesPerView) - 1;
+            if (currentSlide > maxSlide) {
+                currentSlide = maxSlide;
+            }
+            
+            // Actualizar puntos de navegación
+            carouselDots.innerHTML = '';
+            for (let i = 0; i < Math.ceil(totalSlides / slidesPerView); i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (i === currentSlide) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    goToSlide(i);
+                    startAutoSlide();
+                });
+                carouselDots.appendChild(dot);
+            }
+            
+            updateCarousel();
+        }
+
+        // Iniciar movimiento automático del carrusel
+        function startAutoSlide() {
+            // Limpiar cualquier intervalo existente
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+            
+            // Establecer nuevo intervalo (cada 4 segundos)
+            autoSlideInterval = setInterval(() => {
+                nextSlide();
+            }, 4000);
+        }
+
+        // Detener movimiento automático del carrusel
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+
+        // Renderizar productos
+        function renderProducts(filter) {
+            productsGrid.innerHTML = '';
+            
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(product => product.category === filter);
+            
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card fade-in';
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                        <span class="product-badge">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-id="${product.id}">
+                                <i class="fas fa-shopping-cart"></i> Añadir
+                            </button>
+                            <button class="quick-view" data-id="${product.id}">
+                                <i class="fas fa-eye"></i> Ver
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Agregar event listeners a los botones de los productos
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    addToCart(productId);
+                });
+            });
+            
+            document.querySelectorAll('.quick-view').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    openProductModal(productId);
+                });
+            });
+        }
+
+        // Agregar producto al carrito
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1,
+                    owner: product.owner
+                });
+            }
+            
+            updateCart();
+            showNotification(`${product.name} añadido al carrito`);
+        }
+
+        // Agregar producto al carrito desde el modal
+        function addToCartFromModal() {
+            if (currentProduct) {
+                addToCart(currentProduct.id);
+                closeProductModal();
+            }
+        }
+
+        // Actualizar carrito
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Tu carrito está vacío</p>';
+                cartTotal.textContent = '$0.00';
+                cartCount.textContent = '0';
+                return;
+            }
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-img">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            <button class="remove-item" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            // Agregar event listeners a los botones de cantidad
+            document.querySelectorAll('.decrease').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    decreaseQuantity(productId);
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    increaseQuantity(productId);
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    removeFromCart(productId);
+                });
+            });
+        }
+
+        // Disminuir cantidad
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item && item.quantity > 1) {
+                item.quantity -= 1;
+                updateCart();
+            } else {
+                removeFromCart(productId);
+            }
+        }
+
+        // Aumentar cantidad
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += 1;
+                updateCart();
+            }
+        }
+
+        // Eliminar producto del carrito
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+            showNotification('Producto eliminado del carrito');
+        }
+
+        // Abrir modal de producto
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            currentProduct = product;
+            modalImage.src = product.image;
+            modalTitle.textContent = product.name;
+            modalPrice.textContent = `$${product.price.toFixed(2)}`;
+            modalDescription.textContent = product.description;
+            
+            productModal.classList.add('active');
+        }
+
+        // Cerrar modal de producto
+        function closeProductModal() {
+            productModal.classList.remove('active');
+            currentProduct = null;
+        }
+
+        // Mostrar/ocultar carrito
+        function toggleCart() {
+            cartModal.classList.toggle('active');
+        }
+
+        // Mostrar notificación
+        function showNotification(message) {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.className = 'notification slide-in';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: var(--shadow);
+                z-index: 2000;
+                max-width: 300px;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Eliminar notificación después de 4 segundos
+            setTimeout(() => {
+                notification.remove();
+            }, 4000);
+        }
+
+        // Finalizar compra (mostrar modal de datos del cliente)
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('Tu carrito está vacío');
+                return;
+            }
+            
+            // Mostrar modal de datos del cliente
+            openCustomerModal();
+        }
+
+        // Funciones para el modal del cliente
+        function openCustomerModal() {
+            customerModal.classList.add('active');
+        }
+
+        function closeCustomerModalFunc() {
+            customerModal.classList.remove('active');
+        }
+
+        function submitCustomerForm(e) {
+            e.preventDefault();
+            
+            const customerName = document.getElementById('customerName').value;
+            const customerPhone = document.getElementById('customerPhone').value;
+            const customerCI = document.getElementById('customerCI').value;
+            const customerAddress = document.getElementById('customerAddress').value;
+            
+            // Validar que se hayan ingresado todos los campos
+            if (!customerName || !customerPhone || !customerCI || !customerAddress) {
+                showNotification('Por favor, complete todos los campos');
+                return;
+            }
+            
+            // Cerrar el modal del cliente
+            closeCustomerModalFunc();
+            
+            // Enviar los pedidos por WhatsApp
+            sendOrdersToWhatsApp(customerName, customerPhone, customerCI, customerAddress);
+        }
+
+        // Función para enviar los pedidos por WhatsApp con los datos del cliente
+        function sendOrdersToWhatsApp(customerName, customerPhone, customerCI, customerAddress) {
+            // Agrupar productos por dueño
+            const productsByOwner = {};
+            
+            cart.forEach(item => {
+                if (!productsByOwner[item.owner]) {
+                    productsByOwner[item.owner] = [];
+                }
+                productsByOwner[item.owner].push(item);
+            });
+            
+            // Para cada dueño, crear un mensaje y enviar por WhatsApp
+            Object.keys(productsByOwner).forEach(owner => {
+                const ownerProducts = productsByOwner[owner];
+                
+                // Calcular subtotal, descuento y total
+                const subtotal = ownerProducts.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const discount = subtotal * 0.00; // 0% de descuento se puede modificar 
+                const total = subtotal - discount;
+                
+                // Construir el mensaje
+                let message = `¡Hola! Quiero realizar la siguiente compra:%0A%0A`;
+                
+                // Datos del cliente
+                message += `*Datos del cliente:*%0A`;
+                message += `• *Nombre:* ${customerName}%0A`;
+                message += `• *Teléfono:* ${customerPhone}%0A`;
+                message += `• *Número CI:* ${customerCI}%0A`;
+                message += `• *Dirección:* ${customerAddress}%0A%0A`;
+                
+                // Productos
+                message += `*Productos solicitados:*%0A`;
+                ownerProducts.forEach(item => {
+                    message += `%0A*Producto ${ownerProducts.indexOf(item) + 1}:*%0A`;
+                    message += `• *Nombre:* ${item.name}%0A`;
+                    message += `• *Cantidad:* ${item.quantity}%0A`;
+                    message += `• *Precio unitario:* $${item.price.toFixed(2)}%0A`;
+                    message += `• *Subtotal:* $${(item.price * item.quantity).toFixed(2)}%0A`;
+                    message += `• *Imagen:* ${item.image}%0A`;
+                });
+                
+                // Totales
+                message += `%0A*Resumen de pago:*%0A`;
+                message += `• *Subtotal:* $${subtotal.toFixed(2)}%0A`;
+                message += `• *Descuento (0%):* -$${discount.toFixed(2)}%0A`;
+                message += `• *Total a pagar:* $${total.toFixed(2)}%0A%0A`;
+                
+                // Información del vendedor
+                message += `*Información del vendedor:*%0A`;
+                message += `• *Nombre:* ${sellerInfo.name}%0A`;
+                message += `• *Teléfono:* ${sellerInfo.phone}%0A`;
+                message += `• *Dirección:* ${sellerInfo.address}%0A%0A`;
+                
+                message += `Por favor confirmar disponibilidad y forma de pago. ¡Gracias!`;
+                
+                // Abrir WhatsApp con el mensaje
+                window.open(`https://wa.me/${owner}?text=${message}`, '_blank');
+            });
+            
+            // Vaciar carrito después de la compra
+            cart = [];
+            updateCart();
+            toggleCart();
+            showNotification('¡Pedido enviado! Revisa WhatsApp para continuar con tu compra.');
+        }
+    </script>
+</body>
+</html>
