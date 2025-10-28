@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RápidoMoto - Mensajería y Transporte Rápido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #0D47A1;
+            --accent-color: #29B6F6;
+            --light-color: #E3F2FD;
+            --dark-color: #0A2A5A;
+            --text-color: #333;
+            --light-text: #FFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(14, 53, 117, 0.7), rgba(14, 53, 117, 0.7)), url('https://i.top4top.io/p_3588zjscm0.jpg') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            color: white;
+            max-width: 700px;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+        }
+        
+        /* Form Section */
+        .form-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(41, 182, 246, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px;
+        }
+        
+        .btn-whatsapp i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .feature-icon {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: """;
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: 70vh;
+                margin-top: 70px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img class="logo-img" src="https://i.ibb.co/LDG7Gf2d/fotor-ai-2025020222510.jpg" alt="Logo RápidoMoto">
+                    </a>
+                    <div class="logo-text">
+                        <h1>RápidoMoto</h1>
+                        <p>Mensajería y Transporte Rápido</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#solicitar">Solicitar</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Servicio de Mensajería y Transporte Rápido</h2>
+                <p>Llegamos a donde necesites, cuando lo necesites. Soluciones rápidas y eficientes para tus envíos con la confianza y seguridad que mereces.</p>
+                <a href="#solicitar" class="btn">Solicitar Servicio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Envíos Rápidos</h3>
+                    <p>Entregamos tus documentos y paquetes en el menor tiempo posible, garantizando puntualidad y seguridad.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Cobranzas</h3>
+                    <p>Realizamos cobranzas y entregas de dinero de forma segura y confiable, con registro detallado.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Delivery de Comida</h3>
+                    <p>Llevamos tus alimentos favoritos directamente a tu puerta, manteniendo la temperatura y calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Rápido y Eficiente</h3>
+                        <p>Entregas en tiempo récord con seguimiento en tiempo real de tus envíos.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Seguro y Confiable</h3>
+                        <p>Tus paquetes están asegurados y manejados con el máximo cuidado.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Precios Competitivos</h3>
+                        <p>Ofrecemos tarifas justas y transparentes sin costos ocultos.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Soporte 24/7</h3>
+                        <p>Atención al cliente disponible las 24 horas para resolver tus dudas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="solicitar">
+        <div class="container">
+            <h2 class="section-title">Solicita Nuestro Servicio</h2>
+            <div class="form-container">
+                <form id="serviceForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Cliente *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-busqueda">Dirección de Búsqueda (Opcional)</label>
+                        <input type="text" id="direccion-busqueda" name="direccion-busqueda">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-destino">Dirección de Destino *</label>
+                        <input type="text" id="direccion-destino" name="direccion-destino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="referencia">Referencia *</label>
+                        <textarea id="referencia" name="referencia" placeholder="Describe el paquete o servicio requerido..." required></textarea>
+                    </div>
+                    <button type="button" id="whatsappBtn" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Excelente servicio, siempre puntuales y muy profesionales. He confiado en ellos para envíos importantes y nunca me han fallado.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://e.top4top.io/p_3526yyszp0.jpg" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Francisco García </h4>
+                            <p>Cliente frecuente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Los mejores en mensajería rápida. Su app de seguimiento me permite saber exactamente dónde está mi paquete en todo momento.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Empresaria</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Rápidos, confiables y con precios justos. He probado varios servicios de mensajería y RápidoMoto es sin duda el mejor.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Javier López</h4>
+                            <p>Dueño de negocio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>RápidoMoto</h3>
+                    <p>Tu solución confiable para mensajería y transporte rápido. Llegamos donde otros no llegan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+5352945888"><i class="fab fa-whatsapp"></i></a>
+
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#solicitar">Solicitar Servicio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centro Habana Manrrique #565 /Salud y Dragones</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+             <span>+53 5294-58-88</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>williamurria@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun - Vie: 8:00 - 20:00<br>Sáb: 9:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 RápidoMoto - Todos los derechos reservados | Desarrollado por FG-Studio
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // WhatsApp form submission
+        document.getElementById('whatsappBtn').addEventListener('click', function() {
+            // Obtener los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const direccionBusqueda = document.getElementById('direccion-busqueda').value;
+            const direccionDestino = document.getElementById('direccion-destino').value;
+            const referencia = document.getElementById('referencia').value;
+            
+            // Validar campos obligatorios
+            if (!nombre || !telefono || !direccionDestino || !referencia) {
+                alert('Por favor, complete todos los campos obligatorios.');
+                return;
+            }
+            
+            // Crear el mensaje para WhatsApp
+            let mensaje = `Hola, me gustaría solicitar un servicio de mensajería.\n\n`;
+            mensaje += `*Nombre:* ${nombre}\n`;
+            mensaje += `*Teléfono:* ${telefono}\n`;
+            if (direccionBusqueda) {
+                mensaje += `*Dirección de Búsqueda:* ${direccionBusqueda}\n`;
+            }
+            mensaje += `*Dirección de Destino:* ${direccionDestino}\n`;
+            mensaje += `*Referencia:* ${referencia}\n\n`;
+            mensaje += `Por favor, confirmen mi solicitud.`;
+            
+            // Codificar el mensaje para URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Número de WhatsApp (reemplazar con el número real)
+            const numeroWhatsApp = "+5352945888"; // Cambiar por el número real
+            
+            // Crear el enlace de WhatsApp
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+            
+            // Abrir WhatsApp
+            window.open(urlWhatsApp, '_blank');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
