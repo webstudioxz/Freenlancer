@@ -1065,7 +1065,7 @@
             padding: 30px;
             width: 100%;
             max-width: 500px;
-            margin: 100px auto;
+            margin: 200px auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
@@ -1393,19 +1393,19 @@
 <body>
     <!-- Temporizador - Visible inicialmente -->
     <div class="timer-container">
-        <h1> Habilitar sistema de escaneo</h1>
+        <h1> Habilitar Sistema de Escaneo</h1>
         
         <!-- Panel de bienvenida para primer acceso -->
         <div id="welcomePanel" class="panel active">
             <h2>Bienvenido al Sistema</h2>
-            <p>Como es tu primera vez, tienes 24 horas de acceso libre.</p>
+            <p>Como es tu primera vez, tienes 10 minutos de acceso libre.</p>
             <p>El temporizador comenzará automáticamente.</p>
             <button id="startFirstAccess" class="btn">
-                <i class="fas fa-play"></i> Iniciar Acceso de 24 Horas
+                <i class="fas fa-play"></i> Iniciar Acceso de 10 Minutos
             </button>
         </div>
         
-        <!-- Panel de contraseña (se mostrará después de las 24 horas) -->
+        <!-- Panel de contraseña (se mostrará después de los 10 minutos) -->
         <div id="passwordPanel" class="panel">
             <h2>Ingrese la Contraseña</h2>
             <input type="password" id="passwordInput" placeholder="Contraseña" required>
@@ -1413,7 +1413,7 @@
             <div id="passwordError" class="hidden" style="color: #ff6b6b; margin-top: 10px;"></div>
             <div id="blockedMessage" class="blocked-message hidden"></div>
             <div class="reset-info">
-                <p>Diseñador web Francisco  García <br> Todos los derechos están  reservados</p>Dios lo vendiga</p>
+                <p>Programador y Desarrollador web Francisco  García <br> Todos los derechos están  reservados</p>Dios lo vendiga</p>
                 <p id="attemptsInfo" class="attempts-info"></p>
             </div>
         </div>
@@ -2068,15 +2068,15 @@
         }
 
         // =============================================
-        // SISTEMA DE TEMPORIZADOR - MODIFICADO CON ACCESO LIBRE POR 24 HORAS
+        // SISTEMA DE TEMPORIZADOR - MODIFICADO CON ACCESO LIBRE POR 10 MINUTOS
         // =============================================
         
-        // CONFIGURACIÓN - MODIFICAR AQUÍ PARA CAMBIAR LA CONTRASEÑA
-        const correctPassword = "123"; // Contraseña del temporizador
+    
+const correctPassword = "*(Pacho1988)*";
         const maxAttempts = 3;
         const maxBlockTime = 24 * 60 * 60 * 1000; // 1 día en milisegundos
         const warningTime = 5 * 60 * 1000; // 5 minutos en milisegundos
-        const FREE_ACCESS_TIME = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+        const FREE_ACCESS_TIME = 10 * 60 * 1000; // MODIFICADO: 10 minutos en milisegundos
 
         // Elementos del DOM
         const welcomePanel = document.getElementById('welcomePanel');
@@ -2117,97 +2117,67 @@
 
         // Cargar estado desde localStorage usando funciones seguras
         function loadState() {
-            const savedTime = safeGetItem('remainingTime', 0);
-            if (savedTime) {
-                remainingTime = parseInt(savedTime);
-                
-                // Si hay tiempo restante, iniciar el temporizador automáticamente
-                if (remainingTime > 0) {
+            const savedFirstAccessUsed = safeGetItem('firstAccessUsed', false);
+            firstAccessUsed = savedFirstAccessUsed;
+            
+            const savedEndTime = safeGetItem('endTime', 0);
+            const savedPremiumMode = safeGetItem('premiumMode', false);
+            const savedFirstAccessTime = safeGetItem('firstAccessTime', 0);
+
+            if (savedPremiumMode) {
+                premiumMode = true;
+                activatePremiumMode();
+                return;
+            }
+
+            if (savedEndTime > 0) {
+                const currentTime = Date.now();
+                if (currentTime < savedEndTime) {
+                    // Temporizador activo
+                    remainingTime = savedEndTime - currentTime;
                     startTimerFromStorage();
+                } else {
+                    // Temporizador ha expirado
+                    showPanel(passwordPanel);
+                }
+            } else {
+                // No hay temporizador activo, verificar acceso gratuito
+                if (!firstAccessUsed && savedFirstAccessTime > 0) {
+                    const currentTime = Date.now();
+                    const freeAccessEndTime = savedFirstAccessTime + FREE_ACCESS_TIME;
+                    if (currentTime < freeAccessEndTime) {
+                        // Aún en acceso gratuito
+                        remainingTime = freeAccessEndTime - currentTime;
+                        startTimerFromStorage();
+                    } else {
+                        // Acceso gratuito expirado
+                        firstAccessUsed = true;
+                        safeSetItem('firstAccessUsed', true);
+                        showPanel(passwordPanel);
+                    }
+                } else if (firstAccessUsed) {
+                    // Ya se usó el acceso gratuito
+                    showPanel(passwordPanel);
+                } else {
+                    // Primera vez
+                    showPanel(welcomePanel);
                 }
             }
-            
+
             // Cargar intentos fallidos
             const savedAttempts = safeGetItem('failedAttempts', 0);
             if (savedAttempts) {
                 failedAttempts = parseInt(savedAttempts);
             }
-            
+
             // Cargar último intento
             const savedLastAttempt = safeGetItem('lastAttemptTime', 0);
             if (savedLastAttempt) {
                 lastAttemptTime = parseInt(savedLastAttempt);
-                
-                // Verificar si el usuario está bloqueado
                 checkBlockStatus();
             }
-            
-            // Cargar estado premium
-            const savedPremium = safeGetItem('premiumMode', false);
-            if (savedPremium) {
-                premiumMode = true;
-                activatePremiumMode();
-            }
-            
-            // Cargar estado de primer acceso
-            const savedFirstAccess = safeGetItem('firstAccessUsed', false);
-            if (savedFirstAccess) {
-                firstAccessUsed = true;
-            }
-            
-            // Verificar acceso libre por 24 horas (NUEVA FUNCIONALIDAD)
-            checkFirstAccess();
-            
+
             updateAttemptsInfo();
-        }
-
-        // NUEVA FUNCIÓN: Verificar acceso libre por 24 horas
-        function checkFirstAccess() {
-            const firstAccessTime = safeGetItem('firstAccessTime', 0);
-            const currentTime = Date.now();
-            
-            // Si es la primera vez o no se ha usado el acceso libre
-            if (firstAccessTime === 0 && !firstAccessUsed) {
-                // Mostrar panel de bienvenida
-                showPanel(welcomePanel);
-            } 
-            // Si ya se usó el acceso libre pero aún está activo
-            else if (firstAccessTime > 0 && !firstAccessUsed) {
-                const timeElapsed = currentTime - firstAccessTime;
-                
-                if (timeElapsed < FREE_ACCESS_TIME) {
-                    // Aún está dentro del período de acceso libre
-                    remainingTime = FREE_ACCESS_TIME - timeElapsed;
-                    safeSetItem('remainingTime', remainingTime);
-                    
-                    // Iniciar temporizador automáticamente
-                    startTimerFromStorage();
-                    
-                    showNotification(`Acceso libre activo. Tiempo restante: ${formatTime(remainingTime)}`, 'success');
-                } else {
-                    // El acceso libre ha expirado
-                    firstAccessUsed = true;
-                    safeSetItem('firstAccessUsed', true);
-                    safeRemoveItem('remainingTime');
-                    
-                    // Mostrar panel de contraseña
-                    showPanel(passwordPanel);
-                    showNotification('El período de acceso libre ha expirado. Ingrese la contraseña para continuar.', 'warning');
-                }
-            }
-            // Si ya se usó el acceso libre y expiró
-            else if (firstAccessUsed && remainingTime <= 0) {
-                // Mostrar panel de contraseña
-                showPanel(passwordPanel);
-            }
-        }
-
-        // Función auxiliar para formatear tiempo
-        function formatTime(milliseconds) {
-            const hours = Math.floor(milliseconds / (60 * 60 * 1000));
-            const minutes = Math.floor((milliseconds % (60 * 60 * 1000)) / (60 * 1000));
-            const seconds = Math.floor((milliseconds % (60 * 1000)) / 1000);
-            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
 
         // Activar modo premium
@@ -2328,20 +2298,26 @@
 
         // Actualizar temporizador
         function updateTimer() {
-            remainingTime -= 1000;
-            safeSetItem('remainingTime', remainingTime);
+            const currentTime = Date.now();
+            const savedEndTime = safeGetItem('endTime', 0);
+            
+            if (savedEndTime > 0) {
+                remainingTime = savedEndTime - currentTime;
+            } else {
+                remainingTime -= 1000;
+            }
             
             updateTimerDisplay();
             
             // Mostrar advertencia cuando queden 5 minutos o menos
-            if (remainingTime === warningTime) {
+            if (remainingTime <= warningTime && remainingTime > warningTime - 1000) {
                 showNotification(`El tiempo se está agotando. Quedan ${Math.ceil(remainingTime / 60000)} minutos.`, 'warning');
             }
             
             // Cuando el tiempo se acabe
             if (remainingTime <= 0) {
                 clearInterval(timerInterval);
-                safeRemoveItem('remainingTime');
+                safeRemoveItem('endTime');
                 
                 // Ocultar la tienda y mostrar el temporizador
                 document.querySelector('.timer-container').style.display = 'block';
@@ -2367,11 +2343,7 @@
 
         // Resetear página cuando el tiempo se acabe
         function resetPage() {
-            // Limpiar todos los datos del localStorage
-            safeRemoveItem('remainingTime');
-            safeRemoveItem('failedAttempts');
-            safeRemoveItem('lastAttemptTime');
-            safeRemoveItem('premiumMode');
+            // Limpiar todos los datos del localStorage EXCEPTO los de acceso
             safeRemoveItem('products');
             safeRemoveItem('sales');
             safeRemoveItem('categories');
@@ -2388,8 +2360,7 @@
         // Detener temporizador manualmente
         function stopTimerManually() {
             clearInterval(timerInterval);
-            remainingTime = 0;
-            safeRemoveItem('remainingTime');
+            safeRemoveItem('endTime');
             
             // Ocultar la tienda y mostrar el temporizador
             document.querySelector('.timer-container').style.display = 'block';
@@ -2407,8 +2378,7 @@
             // Se puede llamar desde la consola del desarrollador
             if (confirm('¿Está seguro de que desea reiniciar el temporizador? Esto establecerá el tiempo restante a 0.')) {
                 clearInterval(timerInterval);
-                remainingTime = 0;
-                safeRemoveItem('remainingTime');
+                safeRemoveItem('endTime');
                 
                 // Ocultar la tienda y mostrar el temporizador
                 document.querySelector('.timer-container').style.display = 'block';
@@ -2428,8 +2398,7 @@
             if (enteredPassword === correctPassword) {
                 // Reiniciar el temporizador
                 clearInterval(timerInterval);
-                remainingTime = 0;
-                safeRemoveItem('remainingTime');
+                safeRemoveItem('endTime');
                 
                 // Ocultar el modal
                 timeModal.style.display = 'none';
@@ -2501,16 +2470,15 @@
             // Guardar el momento de primer acceso
             const currentTime = Date.now();
             safeSetItem('firstAccessTime', currentTime);
-            
-            // Establecer tiempo de acceso libre
+            const freeAccessEndTime = currentTime + FREE_ACCESS_TIME;
+            safeSetItem('endTime', freeAccessEndTime);
             remainingTime = FREE_ACCESS_TIME;
-            safeSetItem('remainingTime', remainingTime);
             
             // Iniciar temporizador automáticamente
             startTimerFromStorage();
             
             // Mostrar notificación de tiempo de prueba
-            showNotification('Acceso libre activado por 24 horas. Disfrute de todas las funciones.', 'success');
+            showNotification('Acceso libre activado por 10 minutos. Disfrute de todas las funciones.', 'success');
         });
 
         submitPassword.addEventListener('click', () => {
@@ -2567,8 +2535,10 @@
                 showNotification('Modo Premium activado correctamente.', 'success');
             } else {
                 const selectedTime = parseInt(selectedValue) * 60 * 1000; // Convertir a milisegundos
+                const currentTime = Date.now();
+                const endTime = currentTime + selectedTime;
+                safeSetItem('endTime', endTime);
                 remainingTime = selectedTime;
-                safeSetItem('remainingTime', selectedTime);
                 
                 // Iniciar temporizador
                 showPanel(timerPanel);
@@ -3373,11 +3343,15 @@
                 appState.invoiceItems.forEach((item, index) => {
                     const itemElement = document.createElement('div');
                     itemElement.className = 'invoice-item';
+                    
+                    // Calcular la cantidad restante
+                    const remainingQuantity = item.product.quantity - item.quantity;
+                    
                     itemElement.innerHTML = `
                         <div>
                             <strong>${item.product.name}</strong> (${item.category})<br>
                             $${item.product.price.toFixed(2)} x ${item.quantity}
-                            <div class="remaining-quantity">Cantidad restante: ${item.product.quantity}</div>
+                            <div class="remaining-quantity">Cantidad restante: ${remainingQuantity}</div>
                             <div class="quantity-controls" style="margin-top: 5px;">
                                 <button class="btn quantity-btn" onclick="adjustInvoiceQuantity(${index}, -1)">-</button>
                                 <span class="quantity-display">${item.quantity}</span>
